@@ -1,13 +1,47 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import {getAllByTestId, render} from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import {act, getAllByTestId, render} from '@testing-library/react';
+import apiClient from '../../services/apiClient';
 
 let container = null;
 
 beforeEach( async () =>{
 
+    jest.spyOn(apiClient, 'getApps').mockImplementation(()=>{
+        return Promise.resolve([
+            {
+                company: "test company 1",
+                jobTitle: "test job title 1",
+                location: "test location 1",
+                salary: "test salary 1",
+                status: "test status 1"
+            },
+            {
+                company: "test company 2",
+                jobTitle: "test job title 2",
+                location: "test location 2",
+                salary: "test salary 2",
+                status: "test status 2"
+            },
+            {
+                company: "test company 3",
+                jobTitle: "test job title 3",
+                location: "test location 3",
+                salary: "test salary 3",
+                status: "test status 3"
+            },
+            {
+                company: "test company 4",
+                jobTitle: "test job title 4",
+                location: "test location 4",
+                salary: "test salary 4",
+                status: "test status 4"
+            }
+        ])
+    })
+
     container = render(<Dashboard/>).container;
+
 
     // when testing, code that causes React state updates should be wrapped into act()
     await act(async() => {});
