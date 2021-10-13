@@ -16,7 +16,13 @@ const Dashboard = () => {
 
     let jobApps = jobAppState.map((jobApp, index) => {
         return(
-            <div data-testid='job-app' key={index}>job app</div>
+            <div data-testid='job-app' key={index}>
+                <div data-testid='company-name'>{jobApp.company}</div>
+                <div data-testid='job-title'>{jobApp.jobTitle}</div>
+                <div     data-testid='location'>{jobApp.location}</div>
+                <div data-testid='salary'>{jobApp.salary}</div>
+                <div data-testid='status'>{jobApp.status}</div>
+            </div>
         );
     });
 

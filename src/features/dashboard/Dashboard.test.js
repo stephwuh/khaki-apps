@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import {act, getAllByTestId, render} from '@testing-library/react';
+import {act, getAllByTestId, render, getNodeText} from '@testing-library/react';
 import apiClient from '../../services/apiClient';
 
 let container = null;
@@ -49,6 +49,47 @@ beforeEach( async () =>{
 
 it('should show job applications submitted by the user', () => {
 
-    const jobApps = getAllByTestId(container, 'job-app')
+    const jobApps = getAllByTestId(container, 'job-app');
+
     expect(jobApps.length).toBeGreaterThan(0);
-})
+});
+
+it('should show company name of job applications', () => {
+
+    /*
+    to test that the name of the company renders, 
+    we get the text of the node of the first company name 
+    */
+   
+    const companyNames = getAllByTestId(container, 'company-name');
+    
+    expect(getNodeText(companyNames[0])).toBe('test company 1');
+});
+
+it('should show job title of job applications', () => {
+
+    const jobTitles = getAllByTestId(container, 'job-title');
+    
+    expect(getNodeText(jobTitles[0])).toBe('test job title 1');
+});
+
+it('should show location of job applications', () => {
+
+    const locations = getAllByTestId(container, 'location');
+    
+    expect(getNodeText(locations[0])).toBe('test location 1');
+});
+
+it('should show salary of job applications', () => {
+
+    const salaries = getAllByTestId(container, 'salary');
+    
+    expect(getNodeText(salaries[0])).toBe('test salary 1');
+});
+
+it('should show status of job applications', () => {
+
+    const status = getAllByTestId(container, 'status');
+    
+    expect(getNodeText(status[0])).toBe('test status 1');
+});
