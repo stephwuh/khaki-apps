@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import {act, getAllByTestId, render, getNodeText} from '@testing-library/react';
+import {act, getAllByTestId, render, getNodeText, getByTestId} from '@testing-library/react';
 import apiClient from '../../services/apiClient';
 
 let container = null;
@@ -46,6 +46,27 @@ beforeEach( async () =>{
     // when testing, code that causes React state updates should be wrapped into act()
     await act(async() => {});
 });
+
+
+it('should show page title', () => {
+
+    const title = getByTestId(container, 'title');
+
+    expect(getNodeText(title)).toBe('Job Applications');
+})
+
+it('should show search', ()=> {
+    expect(getByTestId(container, 'search')).toBeTruthy();
+})
+
+it('should show filters', ()=>{
+    expect(getByTestId(container, 'date-type')).toBeTruthy();
+    expect(getByTestId(container, 'company-type')).toBeTruthy();
+    expect(getByTestId(container, 'job-title-type')).toBeTruthy();
+    expect(getByTestId(container, 'location-type')).toBeTruthy();
+    expect(getByTestId(container, 'stage-type')).toBeTruthy();
+})
+
 
 it('should show job applications submitted by the user', () => {
 

@@ -1,0 +1,59 @@
+
+.container{
+    height: 100vh;
+    width: 50%;
+    position: relative;
+    left: 180px;
+    text-align: center;
+    /* border: 1px solid red; */
+    margin-left: 7rem;
+}
+
+.container > h3{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.search{
+    width: 100%;
+    height: 2rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.filters{
+    width: 100%;
+    height: 2rem;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+.filters > button{
+    width: 5rem;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.jobs{
+    width: 100%;
+    height: 100px;
+    margin-top: 1.5rem;
+    display: flex;
+
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px rgb(240, 239, 239);
+
+}
+
+.items{
+    height: 100%;
+    width: 20%;
+    text-align: left;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
