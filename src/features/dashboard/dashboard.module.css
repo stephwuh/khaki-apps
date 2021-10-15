@@ -9,9 +9,25 @@
     margin-left: 7rem;
 }
 
-.container > h3{
+/* .container > h3{
     margin-top: 3rem;
     margin-bottom: 2rem;
+} */
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.btnContainer>button{
+    position: absolute;
+    right: 0;
+    border-radius: 5px;
+    background-color: #F5BB00;
+    width: 7rem;
+    height: 1.5rem;
+    border: 1px solid lightgray;
 }
 
 .search{
@@ -19,7 +35,9 @@
     height: 2rem;
     padding-left: 1rem;
     border-radius: 5px;
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
+    border-style: none;
+    box-shadow: 3px 3px rgb(240, 239, 239);
 }
 
 .filters{
@@ -30,9 +48,11 @@
 }
 .filters > button{
     width: 5rem;
+    height: 1.5rem;
     margin-right: 0.5rem;
     border-radius: 5px;
     border: 1px solid lightgray;
+    background-color: white;
 }
 
 .jobs{
