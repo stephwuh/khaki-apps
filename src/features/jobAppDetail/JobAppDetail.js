@@ -1,7 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import jobAppDetail from './jobAppDetail.module.css'
 
 const JobAppDetail = (props) => {
+
+    const [editState, setEditState] = useState(false);
+
+    const [companyState, setCompanyState] = useState(props.jobApp.company)
+
+    const [jobTitleState, setJobTitleState] = useState(props.jobApp.jobTitle)
+
+    const handleCompanyOnChange = e =>{
+        setCompanyState(e.target.value)
+    }
+
+    const handleJobTitleOnChange = e =>{
+        setJobTitleState(e.target.value)
+    }
+
     return(
         <form>
             <div className={jobAppDetail.itemContainer3}>
@@ -10,14 +25,20 @@ const JobAppDetail = (props) => {
                     <input 
                         data-testid="company"
                         type='text'
-                        value={props.jobApp.company} />
+                        value={companyState}
+                        disabled={!editState}
+                        onChange={handleCompanyOnChange}
+                        />
                 </div>
                 <div className={jobAppDetail.item}>
                     <h5>Job Title</h5>
                     <input 
                         data-testid="jobTitle"
                         type='text'
-                        value={props.jobApp.jobTitle} />
+                        value={jobTitleState} 
+                        disabled={!editState}
+                        onChange={handleJobTitleOnChange}
+                        />
                 </div>
                 <div className={jobAppDetail.item}>
                     <h5>Expected Salary</h5>
@@ -81,7 +102,13 @@ const JobAppDetail = (props) => {
                 </div>
             </div>
             <div className={jobAppDetail.btnContainer}>
-                <button data-testid="editBtn">Edit</button>
+                <button 
+                    data-testid="editBtn"
+                    onClick={ () => {
+                        setEditState(!editState)
+                    }}
+                    type="button"
+                    >Edit</button>
                 <button data-testid="submitBtn">Submit</button>
             </div>
         </form>

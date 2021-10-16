@@ -15,7 +15,7 @@ const jobAppDetail = {
     close: (jobApp)=>{
         eventsStream.next({ open: false, jobApp: null})
     },
-    // exposes this event stream as an observable for our components to subscript to these events and listen to whether a dialogue is open or closed
+    // exposes this event stream as an observable for our components to subscribe to these events and listen to whether a dialogue is open or closed
     eventsStream: eventsStream.asObservable()
 };
 

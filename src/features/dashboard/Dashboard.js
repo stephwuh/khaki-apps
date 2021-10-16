@@ -6,12 +6,6 @@ import jobAppDetail from "../../services/jobAppDetail";
 import dashboard from "./dashboard.module.css";
 import JobAppDetail from "../jobAppDetail/JobAppDetail";
 
-// const useStyles = makeStyles(theme => ({
-//   dialogPaper: {
-     
-//       height : '400px'
-//   }
-// }));
 
 const Dashboard = () => {
   const [jobAppState, setJobAppState] = useState([]);
@@ -103,7 +97,6 @@ const Dashboard = () => {
       </div>
       {jobApps}
     <Dialog 
-        // classes={{ paper : classes.dialogPaper}}
         maxWidth='md'
         fullWidth = {true}
         open ={jobDetailState.open}

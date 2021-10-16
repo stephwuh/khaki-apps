@@ -1,6 +1,7 @@
 import React from 'react';
-import {getByTestId, render} from '@testing-library/react';
+import {getByTestId, render, fireEvent} from '@testing-library/react';
 import JobAppDetail from './JobAppDetail.js';
+import apiClient from '../../services/apiClient.js';
 
 let container = null;
 
@@ -64,27 +65,69 @@ it('should show application status', () => {
 
 it("should show job app edit button", () => {
 
-    const jobAddBtn = getByTestId(container, "editBtn");
+    const editBtn = getByTestId(container, "editBtn");
   
-    expect(jobAddBtn).toBeTruthy;
+    expect(editBtn).toBeTruthy;
   });
 
-  it("should show job app submit button", () => {
+it("should show job app submit button", () => {
 
-    const submitBtn = getByTestId(container, "submitBtn");
-  
-    expect(submitBtn).toBeTruthy;
-  });
+const submitBtn = getByTestId(container, "submitBtn");
 
-//should show company name
-//should show job title
-//should show expected salary
-//should show location
-//should show source webpage
-//should show contact Name
-//should show contact number
-//should show description
-//should show notes
-//should show application status
-//should show edit button
-//should show submit button
+expect(submitBtn).toBeTruthy;
+});
+
+
+
+
+describe('content should be editable after edit button is clicked', ()=> {
+    
+    beforeEach(() =>{
+
+        const editBtn = getByTestId(container, "editBtn");
+        editBtn.click();
+
+    });
+    
+    it("company name is editable", () => {
+
+        const company = getByTestId(container, 'company');
+    
+        fireEvent.change(
+            company,
+            {target: {value: 'updated company name'}}
+        );
+    
+        expect(company.value).toBe('updated company name');
+    
+    });
+
+    it("job title is editable", () => {
+
+        const jobTitle = getByTestId(container, 'jobTitle');
+    
+        fireEvent.change(
+            jobTitle,
+            {target: {value: 'updated job title'}}
+        );
+    
+        expect(jobTitle.value).toBe('updated job title');
+    
+    });
+
+
+
+})
+
+
+
+// it('should update job app after clicking submit button', ()=>{
+
+//     jest.spyOn(apiClient, "updateJobApp").mockImplementation(() => {
+//         return Promise.resolve();
+//       });
+
+
+    
+
+// })

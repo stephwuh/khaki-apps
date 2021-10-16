@@ -8,7 +8,6 @@ import {
   getByTestId,
 } from "@testing-library/react";
 import apiClient from "../../services/apiClient";
-import jobAddService from "../../services/jobAddService";
 import jobAppDetail from "../../services/jobAppDetail";
 
 let container = null;
