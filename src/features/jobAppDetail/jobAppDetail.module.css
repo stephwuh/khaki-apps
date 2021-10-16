@@ -1,0 +1,53 @@
+
+.itemContainer3, .itemContainer2{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.5rem 1.5rem 0;
+    width: 100%;
+}
+
+.itemContainer3 .item{
+    width: 33.33333%;
+}
+
+.itemContainer2 .item{
+    width: 50%;
+}
+
+
+textarea{
+    height: 400px;
+}
+
+.item {
+    margin: 0 0.5rem;
+}
+
+input{
+    height: 2rem;
+}
+
+input, textarea{
+    width: 100%;
+    border: 1px solid lightgray; 
+    /* border-style: none; */
+    border-radius: 5px;
+    /* box-shadow: 3px 3px rgb(240 239 239); */
+    padding-left: 0.5rem;
+}
+
+.item h5{
+    margin-bottom: 1rem;
+}
+
+
+.btnContainer > button{
+    border-radius: 5px;
+    background-color: #F5BB00;
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid lightgray;
+    margin: 0 0.3rem;
+    float: right;
+}
+

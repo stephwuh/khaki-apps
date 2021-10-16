@@ -10,7 +10,7 @@ const apiClient = {
         // return axios.get('https://run.mocky.io/v3/5130f0df-bd63-4dfe-8b01-aca5d3cf6d08')
         //     .then(res => res.data)
 
-        let response = await axios.get('http://localhost:3004/job-app');
+        let response = await axios.get('http://localhost:5500/job-app');
 
         return response.data
     }

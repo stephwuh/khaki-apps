@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import {Dialog, DialogContent} from '@material-ui/core';
+import {Dialog, DialogContent, makeStyles} from '@material-ui/core';
 import apiClient from "../../services/apiClient";
 import jobAddService from "../../services/jobAddService";
 import jobAppDetail from "../../services/jobAppDetail";
 import dashboard from "./dashboard.module.css";
+import JobAppDetail from "../jobAppDetail/JobAppDetail";
+
+// const useStyles = makeStyles(theme => ({
+//   dialogPaper: {
+     
+//       height : '400px'
+//   }
+// }));
 
 const Dashboard = () => {
   const [jobAppState, setJobAppState] = useState([]);
@@ -95,11 +103,13 @@ const Dashboard = () => {
       </div>
       {jobApps}
     <Dialog 
+        // classes={{ paper : classes.dialogPaper}}
+        maxWidth='md'
+        fullWidth = {true}
         open ={jobDetailState.open}
         onClose={() => jobAppDetail.close()}>
         <DialogContent>
-            Dialog!
-            {jobDetailState.jobApp ? jobDetailState.jobApp.company: null }
+            <JobAppDetail jobApp={jobDetailState.jobApp}/>
         </DialogContent>
     </Dialog>
     </div>

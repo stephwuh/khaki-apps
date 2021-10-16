@@ -15,3 +15,10 @@ body{
   width: 100%;
 
 }
+
+
+/* material UI dialog box css setting override */
+.MuiDialog-paper{
+  height: 77%;
+  padding: 1rem;
+}
