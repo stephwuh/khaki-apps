@@ -115,6 +115,110 @@ describe('content should be editable after edit button is clicked', ()=> {
     
     });
 
+    it("expected salary is editable", () => {
+
+        const salary = getByTestId(container, 'salary');
+    
+        fireEvent.change(
+            salary,
+            {target: {value: 'updated salary'}}
+        );
+    
+        expect(salary.value).toBe('updated salary');
+    
+    });
+
+    it("location is editable", () => {
+
+        const location = getByTestId(container, 'location');
+    
+        fireEvent.change(
+            location,
+            {target: {value: 'updated location'}}
+        );
+    
+        expect(location.value).toBe('updated location');
+    
+    });
+
+    it("source webpage is editable", () => {
+
+        const webpage = getByTestId(container, 'webpage');
+    
+        fireEvent.change(
+            webpage,
+            {target: {value: 'updated source webpage'}}
+        );
+    
+        expect(webpage.value).toBe('updated source webpage');
+    
+    });
+
+    it("contact name is editable", () => {
+
+        const contactName = getByTestId(container, 'contactName');
+    
+        fireEvent.change(
+            contactName,
+            {target: {value: 'updated contact name'}}
+        );
+    
+        expect(contactName.value).toBe('updated contact name');
+    
+    });
+
+    it("contact number is editable", () => {
+
+        const contactNumber = getByTestId(container, 'contactNumber');
+    
+        fireEvent.change(
+            contactNumber,
+            {target: {value: 'updated contact number'}}
+        );
+    
+        expect(contactNumber.value).toBe('updated contact number');
+    
+    });
+
+    it("application status is editable", () => {
+
+        const status = getByTestId(container, 'status');
+    
+        fireEvent.change(
+            status,
+            {target: {value: 'updated application status'}}
+        );
+    
+        expect(status.value).toBe('updated application status');
+    
+    });
+
+    it("job description is editable", () => {
+
+        const description = getByTestId(container, 'description');
+    
+        fireEvent.change(
+            description,
+            {target: {value: 'updated description'}}
+        );
+    
+        expect(description.value).toBe('updated description');
+    
+    });
+
+    it("notes is editable", () => {
+
+        const notes = getByTestId(container, 'notes');
+    
+        fireEvent.change(
+            notes,
+            {target: {value: 'updated notes'}}
+        );
+    
+        expect(notes.value).toBe('updated notes');
+    
+    });
+
 
 
 })

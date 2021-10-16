@@ -9,12 +9,60 @@ const JobAppDetail = (props) => {
 
     const [jobTitleState, setJobTitleState] = useState(props.jobApp.jobTitle)
 
+    const [salaryState, setSalaryState] = useState(props.jobApp.salary)
+
+    const [locationState, setLocationState] = useState(props.jobApp.location)
+
+    const [webpageState, setWebpageState] = useState(props.jobApp.webpage)
+
+    const [contactNameState, setContactNameState] = useState(props.jobApp.contactName)
+
+    const [contactNumberState, setContactNumberState] = useState(props.jobApp.contactNumber)
+
+    const [statusState, setStatusState] = useState(props.jobApp.status)
+
+    const [descriptionState, setDescriptionState] = useState(props.jobApp.description)
+
+    const [notesState, setNotesState] = useState(props.jobApp.notes)
+
     const handleCompanyOnChange = e =>{
-        setCompanyState(e.target.value)
+        setCompanyState(e.target.value);
     }
 
     const handleJobTitleOnChange = e =>{
-        setJobTitleState(e.target.value)
+        setJobTitleState(e.target.value);
+    }
+
+    const handleSalaryOnChange = e => {
+        setSalaryState(e.target.value);
+    }
+
+    const handleLocationOnChange = e => {
+        setLocationState(e.target.value);
+    }
+
+    const handleWebpageOnChange = e => {
+        setWebpageState(e.target.value);
+    }
+
+    const handleContactNameOnChange = e => {
+        setContactNameState(e.target.value);
+    }
+
+    const handleContactNumberOnChange = e => {
+        setContactNumberState(e.target.value);
+    }
+
+    const handleStatusOnChange = e => {
+        setStatusState(e.target.value);
+    }
+
+    const handleDescriptionOnChange = e => {
+        setDescriptionState(e.target.value);
+    }
+
+    const handleNotesOnChange = e => {
+        setNotesState(e.target.value);
     }
 
     return(
@@ -45,7 +93,10 @@ const JobAppDetail = (props) => {
                     <input 
                         data-testid="salary"
                         type='text'
-                        value={props.jobApp.salary}/>               
+                        value={salaryState}
+                        disabled={!editState}
+                        onChange={handleSalaryOnChange}
+                        />               
                 </div>
             </div>
             <div className={jobAppDetail.itemContainer2}>
@@ -54,14 +105,20 @@ const JobAppDetail = (props) => {
                     <input 
                         data-testid="location"
                         type='text'
-                        value={props.jobApp.location}/>               
+                        value={locationState}
+                        disabled={!editState}
+                        onChange={handleLocationOnChange}/> 
+                                      
                 </div>
                 <div className={jobAppDetail.item}>
                     <h5>Source Webpage</h5>
                     <input 
                         data-testid="webpage"
                         type='text'
-                        value={props.jobApp.webpage}/>               
+                        value={webpageState}
+                        disabled={!editState}
+                        onChange={handleWebpageOnChange}
+                        />               
                 </div>
             </div>
             <div className={jobAppDetail.itemContainer3}>
@@ -70,21 +127,31 @@ const JobAppDetail = (props) => {
                     <input 
                         data-testid="contactName"
                         type='text'
-                        value={props.jobApp.contactName}/>               
+                        value={contactNameState}
+                        disabled={!editState}
+                        onChange={handleContactNameOnChange}
+                        />               
                 </div>
                 <div className={jobAppDetail.item}>
                     <h5>Contact Number</h5>
                     <input 
                         data-testid="contactNumber"
                         type='text'
-                        value={props.jobApp.contactNumber}/>               
+                        value={contactNumberState}
+                        disabled={!editState}
+                        onChange={handleContactNumberOnChange}
+                        
+                        />               
                 </div>
                 <div className={jobAppDetail.item}>
                     <h5>Application Status</h5>
                     <input 
                         data-testid="status"
                         type='text'
-                        value={props.jobApp.status}/>               
+                        value={statusState}
+                        disabled={!editState}
+                        onChange={handleStatusOnChange}
+                        />               
                 </div>
             </div>
             <div className={jobAppDetail.itemContainer2}>
@@ -92,13 +159,19 @@ const JobAppDetail = (props) => {
                     <h5>Job Description</h5>
                     <textarea 
                         data-testid="description"
-                        value={props.jobApp.description}/>               
+                        value={descriptionState}
+                        disabled={!editState}
+                        onChange={handleDescriptionOnChange}
+                        />               
                 </div>
                 <div className={jobAppDetail.item}>
                     <h5>Notes</h5>
                     <textarea
                         data-testid="notes"
-                        value={props.jobApp.notes}/>               
+                        value={notesState}
+                        disabled={!editState}
+                        onChange={handleNotesOnChange}
+                        />               
                 </div>
             </div>
             <div className={jobAppDetail.btnContainer}>
