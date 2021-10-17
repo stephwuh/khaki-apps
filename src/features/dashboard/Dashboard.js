@@ -74,7 +74,6 @@ const Dashboard = () => {
           data-testid="addBtn"
           type="button"
           onClick={() => {
-            // console.log('click');
             jobAddService.open();
           }}
         >
@@ -100,7 +99,8 @@ const Dashboard = () => {
         maxWidth='md'
         fullWidth = {true}
         open ={jobDetailState.open}
-        onClose={() => jobAppDetail.close()}>
+        onClose={() => jobAppDetail.close()}
+        >
         <DialogContent>
             <JobAppDetail jobApp={jobDetailState.jobApp}/>
         </DialogContent>

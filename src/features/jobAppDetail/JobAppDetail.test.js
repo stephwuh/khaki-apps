@@ -6,6 +6,7 @@ import apiClient from '../../services/apiClient.js';
 let container = null;
 
 const mockedJobApp = {
+    id: 1,
     company: "test company 1",
     jobTitle: "test job title 1",
     location: "test location 1",
@@ -17,6 +18,7 @@ const mockedJobApp = {
     description: "test description 1",
     notes: "test notes 1"
 }
+
 
 beforeEach(() =>{
 
@@ -78,6 +80,15 @@ expect(submitBtn).toBeTruthy;
 });
 
 
+// fixing 'cannot read properties of null' error
+
+it('should show empty when no application provided', ()=>{
+
+    container = render(<JobAppDetail jobApp={null} />).container;
+
+    expect(getByTestId(container, 'empty')).toBeTruthy();
+
+})
 
 
 describe('content should be editable after edit button is clicked', ()=> {
@@ -219,19 +230,111 @@ describe('content should be editable after edit button is clicked', ()=> {
     
     });
 
-
-
 })
 
+//do i have to go through the act of clicking the edit button
+//making an update then clicking on the submit button?
+
+it('should update job app after clicking submit button', ()=>{
+
+    jest.spyOn(apiClient, "updateJobApp").mockImplementation(() => {
+        return Promise.resolve();
+      });
+
+    const editBtn = getByTestId(container, "editBtn");
+
+    editBtn.click();
+
+    const company = getByTestId(container, 'company');
+    
+    fireEvent.change(
+        company,
+        {target: {value: 'updated company name'}}
+    );
+
+    const jobTitle = getByTestId(container, 'jobTitle');
+    
+        fireEvent.change(
+            jobTitle,
+            {target: {value: 'updated job title'}}
+        );
+    
+    const salary = getByTestId(container, 'salary');
+
+    fireEvent.change(
+        salary,
+        {target: {value: 'updated salary'}}
+    );
+
+    const location = getByTestId(container, 'location');
+    
+    fireEvent.change(
+        location,
+        {target: {value: 'updated location'}}
+    );
+
+    const webpage = getByTestId(container, 'webpage');
+    
+    fireEvent.change(
+        webpage,
+        {target: {value: 'updated source webpage'}}
+    );
+
+    const contactName = getByTestId(container, 'contactName');
+    
+    fireEvent.change(
+        contactName,
+        {target: {value: 'updated contact name'}}
+    );
 
 
-// it('should update job app after clicking submit button', ()=>{
+    const contactNumber = getByTestId(container, 'contactNumber');
+    
+    fireEvent.change(
+        contactNumber,
+        {target: {value: 'updated contact number'}}
+    );
 
-//     jest.spyOn(apiClient, "updateJobApp").mockImplementation(() => {
-//         return Promise.resolve();
-//       });
+    const status = getByTestId(container, 'status');
+    
+    fireEvent.change(
+        status,
+        {target: {value: 'updated application status'}}
+    );
+
+    const description = getByTestId(container, 'description');
+    
+    fireEvent.change(
+        description,
+        {target: {value: 'updated description'}}
+    );
+
+    const notes = getByTestId(container, 'notes');
+    
+    fireEvent.change(
+        notes,
+        {target: {value: 'updated notes'}}
+    );
 
 
+    const mockedUpdatedJobApp = {
+        company: company.value,
+        jobTitle: jobTitle.value,
+        location: location.value,
+        salary: salary.value,
+        status: status.value,
+        webpage: webpage.value,
+        contactName: contactName.value,
+        contactNumber: contactNumber.value,
+        description: description.value,
+        notes: notes.value
+    }
+
+    const submitBtn = getByTestId(container, 'submitBtn');
+
+    submitBtn.click();
+  
+    expect(apiClient.updateJobApp).toHaveBeenCalledWith(mockedJobApp.id, mockedUpdatedJobApp );
     
 
-// })
+})

@@ -8,13 +8,11 @@ const apiClient = {
 
         return response.data
     },
-    updateJobApp: async () => {
+    updateJobApp: async (jobAppId, updatedJobApp) => {
 
-        return Promise.resolve();
+        let response = await axios.put(`http://localhost:5500/job-app/${jobAppId}/`, updatedJobApp);
 
-        // let response = await axios.get('http://localhost:5500/job-app');
-
-        // return response.data
+        return response.data
     }
 };
 
