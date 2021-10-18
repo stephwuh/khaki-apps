@@ -20,6 +20,13 @@ const apiClient = {
 
         return response.data
     },
+    deleteJobApp: async (jobAppId) => {
+
+        let response = await axios.delete(`http://localhost:5500/job-app/${jobAppId}/`);
+
+        return response.data
+    },
+
 };
 
 export default apiClient;

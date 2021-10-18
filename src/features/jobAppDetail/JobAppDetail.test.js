@@ -1,5 +1,5 @@
 import React from 'react';
-import {getByTestId, render, fireEvent, cleanup, unmount} from '@testing-library/react';
+import {getByTestId, render, fireEvent, cleanup, unmount, queryByTestId} from '@testing-library/react';
 import JobAppDetail from './JobAppDetail.js';
 import apiClient from '../../services/apiClient.js';
 
@@ -22,7 +22,7 @@ const mockedJobApp = {
 
 beforeEach(() =>{
 
-    container = render(<JobAppDetail jobApp={mockedJobApp}/>).container
+    container = render(<JobAppDetail jobApp={mockedJobApp} jobDetailFormState="update" />).container
 });
 
 afterEach(() => {
@@ -73,49 +73,58 @@ describe('job app detail dialog box', ()=>{
 
 })
 
-describe('job app add new dialog box', ()=>{
+describe('add new job app dialog box', ()=>{
 
+    beforeEach(() =>{
+
+        container = render(<JobAppDetail jobApp={{}} jobDetailFormState='add' />).container
+    });
+    
+    afterEach(() => {
+        cleanup();
+    });
 
 
     it('company name input box should be blank', () => {
-        expect(getByTestId(container, 'company').value).toBe("test company 1");
+        expect(getByTestId(container, 'company').value).toBe("");
+    })
+
+    it('job title input box should be blank', () => {
+        expect(getByTestId(container, 'jobTitle').value).toBe("");
+    })
+
+    it('expected salary input box should be blank', () => {
+        expect(getByTestId(container, 'salary').value).toBe("");
+    })
+
+    it('location input box should be blank', () => {
+        expect(getByTestId(container, 'location').value).toBe("");
+    })
+
+    it('source webpage input box should be blank', () => {
+        expect(getByTestId(container, 'webpage').value).toBe("");
+    })
+
+    it('contact name input box should be blank', () => {
+        expect(getByTestId(container, 'contactName').value).toBe("");
+    })
+
+    it('contact number input box should be blank', () => {
+        expect(getByTestId(container, 'contactNumber').value).toBe("");
     })
     
-    it('should show saved job title', () => {
-        expect(getByTestId(container, 'jobTitle').value).toBe("test job title 1");
+    it('job description text area should be blank', () => {
+        expect(getByTestId(container, 'description').value).toBe("");
     })
     
-    it('should show saved expected salary', () => {
-        expect(getByTestId(container, 'salary').value).toBe("test salary 1");
+    it('notes text area should be blank', () => {
+        expect(getByTestId(container, 'notes').value).toBe("");
+    })
+
+    it('application status input box should be blank', () => {
+        expect(getByTestId(container, 'status').value).toBe("");
     })
     
-    it('should show saved job location', () => {
-        expect(getByTestId(container, 'location').value).toBe("test location 1");
-    })
-    
-    it('should show saved source webpage', () => {
-        expect(getByTestId(container, 'webpage').value).toBe("test webpage 1");
-    })
-    
-    it('should show saved contact name', () => {
-        expect(getByTestId(container, 'contactName').value).toBe("test contact name 1");
-    })
-    
-    it('should show saved contact number', () => {
-        expect(getByTestId(container, 'contactNumber').value).toBe("test contact number 1");
-    })
-    
-    it('should show saved job description', () => {
-        expect(getByTestId(container, 'description').value).toBe("test description 1");
-    })
-    
-    it('should show saved notes', () => {
-        expect(getByTestId(container, 'notes').value).toBe("test notes 1");
-    })
-    
-    it('should show saved application status', () => {
-        expect(getByTestId(container, 'status').value).toBe("test status 1");
-    })
 
 })
 
@@ -163,13 +172,6 @@ describe('content should be editable after edit button is clicked', ()=> {
 
         expect(company.getAttribute('disabled')).toEqual(null);
 
-        // fireEvent.change(
-        //     company,
-        //     {target: {value: 'updated company name'}}
-        // );
-
-        // expect(company.value).toBe('updated company name');
-
     });
 
     it("job title is editable", () => {
@@ -177,13 +179,6 @@ describe('content should be editable after edit button is clicked', ()=> {
         const jobTitle = getByTestId(container, 'jobTitle');
 
         expect(jobTitle.getAttribute('disabled')).toEqual(null);
-
-        // fireEvent.change(
-        //     jobTitle,
-        //     {target: {value: 'updated job title'}}
-        // );
-
-        // expect(jobTitle.value).toBe('updated job title');
 
     });
 
@@ -193,13 +188,6 @@ describe('content should be editable after edit button is clicked', ()=> {
 
         expect(salary.getAttribute('disabled')).toEqual(null);
 
-        // fireEvent.change(
-        //     salary,
-        //     {target: {value: 'updated salary'}}
-        // );
-
-        // expect(salary.value).toBe('updated salary');
-
     });
 
     it("location is editable", () => {
@@ -207,13 +195,6 @@ describe('content should be editable after edit button is clicked', ()=> {
         const location = getByTestId(container, 'location');
 
         expect(location.getAttribute('disabled')).toEqual(null);
-
-        // fireEvent.change(
-        //     location,
-        //     {target: {value: 'updated location'}}
-        // );
-
-        // expect(location.value).toBe('updated location');
 
     });
 
@@ -223,13 +204,6 @@ describe('content should be editable after edit button is clicked', ()=> {
 
         expect(webpage.getAttribute('disabled')).toEqual(null);
 
-        // fireEvent.change(
-        //     webpage,
-        //     {target: {value: 'updated source webpage'}}
-        // );
-
-        // expect(webpage.value).toBe('updated source webpage');
-
     });
 
     it("contact name is editable", () => {
@@ -237,13 +211,6 @@ describe('content should be editable after edit button is clicked', ()=> {
         const contactName = getByTestId(container, 'contactName');
 
         expect(contactName.getAttribute('disabled')).toEqual(null);
-
-        // fireEvent.change(
-        //     contactName,
-        //     {target: {value: 'updated contact name'}}
-        // );
-
-        // expect(contactName.value).toBe('updated contact name');
 
     });
 
@@ -253,13 +220,6 @@ describe('content should be editable after edit button is clicked', ()=> {
 
         expect(contactNumber.getAttribute('disabled')).toEqual(null);
 
-        // fireEvent.change(
-        //     contactNumber,
-        //     {target: {value: 'updated contact number'}}
-        // );
-
-        // expect(contactNumber.value).toBe('updated contact number');
-
     });
 
     it("application status is editable", () => {
@@ -267,13 +227,6 @@ describe('content should be editable after edit button is clicked', ()=> {
         const status = getByTestId(container, 'status');
 
         expect(status.getAttribute('disabled')).toEqual(null);
-
-        // fireEvent.change(
-        //     status,
-        //     {target: {value: 'updated application status'}}
-        // );
-
-        // expect(status.value).toBe('updated application status');
 
     });
 
@@ -283,13 +236,6 @@ describe('content should be editable after edit button is clicked', ()=> {
 
         expect(description.getAttribute('disabled')).toEqual(null);
 
-        // fireEvent.change(
-        //     description,
-        //     {target: {value: 'updated description'}}
-        // );
-
-        // expect(description.value).toBe('updated description');
-
     });
 
     it("notes is editable", () => {
@@ -298,19 +244,9 @@ describe('content should be editable after edit button is clicked', ()=> {
 
         expect(notes.getAttribute('disabled')).toEqual(null);
 
-        // fireEvent.change(
-        //     notes,
-        //     {target: {value: 'updated notes'}}
-        // );
-
-        // expect(notes.value).toBe('updated notes');
-
     });
 
 })
-
-//do i have to go through the act of clicking the edit button
-//making an update then clicking on the submit button?
 
 
 describe('submit button', () => {
@@ -330,82 +266,6 @@ describe('submit button', () => {
 
 
     it('should submit the form after clicking submit button', ()=>{
-
-
-        // const editBtn = getByTestId(container, "editBtn");
-
-        // editBtn.click();
-
-        // const company = getByTestId(container, 'company');
-
-        // fireEvent.change(
-        //     company,
-        //     {target: {value: 'updated company name'}}
-        // );
-
-        // const jobTitle = getByTestId(container, 'jobTitle');
-
-        //     fireEvent.change(
-        //         jobTitle,
-        //         {target: {value: 'updated job title'}}
-        //     );
-
-        // const salary = getByTestId(container, 'salary');
-
-        // fireEvent.change(
-        //     salary,
-        //     {target: {value: 'updated salary'}}
-        // );
-
-        // const location = getByTestId(container, 'location');
-
-        // fireEvent.change(
-        //     location,
-        //     {target: {value: 'updated location'}}
-        // );
-
-        // const webpage = getByTestId(container, 'webpage');
-
-        // fireEvent.change(
-        //     webpage,
-        //     {target: {value: 'updated source webpage'}}
-        // );
-
-        // const contactName = getByTestId(container, 'contactName');
-
-        // fireEvent.change(
-        //     contactName,
-        //     {target: {value: 'updated contact name'}}
-        // );
-
-
-        // const contactNumber = getByTestId(container, 'contactNumber');
-
-        // fireEvent.change(
-        //     contactNumber,
-        //     {target: {value: 'updated contact number'}}
-        // );
-
-        // const status = getByTestId(container, 'status');
-
-        // fireEvent.change(
-        //     status,
-        //     {target: {value: 'updated application status'}}
-        // );
-
-        // const description = getByTestId(container, 'description');
-
-        // fireEvent.change(
-        //     description,
-        //     {target: {value: 'updated description'}}
-        // );
-
-        // const notes = getByTestId(container, 'notes');
-
-        // fireEvent.change(
-        //     notes,
-        //     {target: {value: 'updated notes'}}
-        // );
 
         const submittedMockedJobApp = {
             company: "test company 1",
@@ -438,6 +298,49 @@ describe('submit button', () => {
 
     })
 
+})
+
+describe('delete button', ()=>{
+
+
+    it('should not appear when adding new job app', ()=>{
+
+        container = render(<JobAppDetail jobApp={{}} jobDetailFormState='add' />).container;
+
+        const deleteBtn = queryByTestId(container, 'deleteBtn');
+
+        expect(deleteBtn).toEqual(null);
+
+    })
+
+    it('should be disabled when not editing', ()=> {
+
+        const deleteBtn = getByTestId(container, 'deleteBtn');
+
+        expect(deleteBtn.getAttribute('disabled')).toEqual("");
+
+    })
+
+    it('should delete after clicking ', ()=>{
+
+
+        jest.spyOn(apiClient, "deleteJobApp").mockImplementation(() => {
+
+            return Promise.resolve();
+
+        });
+
+        const editBtn = getByTestId(container, "editBtn");
+        editBtn.click();
+
+        const deleteBtn = getByTestId(container, 'deleteBtn');
+
+    
+        deleteBtn.click();
+
+        expect(apiClient.deleteJobApp).toHaveBeenCalledWith(mockedJobApp.id);
+
+    })
 })
 
 

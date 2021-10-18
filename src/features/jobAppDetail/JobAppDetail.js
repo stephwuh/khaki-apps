@@ -94,6 +94,10 @@ const JobAppDetail = (props) => {
         });
   };
 
+  const handleDeleteOnClick = () => {
+    apiClient.deleteJobApp(props.jobApp.id);
+  };
+
   return (
     <form>
       <div className={jobAppDetail.itemContainer3}>
@@ -203,7 +207,16 @@ const JobAppDetail = (props) => {
         </div>
       </div>
       <div className={jobAppDetail.btnContainer}>
-        {/* <button data-testId='closeBtn'>Close</button> */}
+        {props.jobDetailFormState === "update" && (
+          <button
+            data-testid="deleteBtn"
+            disabled={!editState}
+            onClick={handleDeleteOnClick}
+          >
+            Delete
+          </button>
+        )}
+        ;
         <button
           data-testid="submitBtn"
           onClick={handleAppSubmit}
