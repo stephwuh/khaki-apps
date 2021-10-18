@@ -14,7 +14,7 @@
       "id": 1
     },
     {
-      "company": "test company 2",
+      "company": "revised",
       "jobTitle": "test job title 2",
       "location": "test location 2",
       "salary": "test salary 2",
@@ -51,6 +51,15 @@
       "description": "test description 4",
       "notes": "test notes 4",
       "id": 4
+    },
+    {
+      "company": "new company",
+      "jobTitle": "new job title",
+      "salary": "new salary",
+      "id": 5
+    },
+    {
+      "id": 6
     }
   ]
 }

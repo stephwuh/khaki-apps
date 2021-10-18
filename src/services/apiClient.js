@@ -13,7 +13,13 @@ const apiClient = {
         let response = await axios.put(`http://localhost:5500/job-app/${jobAppId}/`, updatedJobApp);
 
         return response.data
-    }
+    },
+    addJobApp: async (newJobApp) => {
+
+        let response = await axios.post(`http://localhost:5500/job-app/`, newJobApp);
+
+        return response.data
+    },
 };
 
 export default apiClient;

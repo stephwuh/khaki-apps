@@ -64,16 +64,6 @@ it("should show job app add button", () => {
   expect(getByTestId(container, "addBtn")).toBeTruthy;
 });
 
-// it("should open the add job page when add job button is clicked", () => {
-//   jest.spyOn(jobAddService, "open").mockImplementation(() => {});
-
-//   const jobAddBtn = getByTestId(container, "addBtn");
-
-//   jobAddBtn.click();
-
-//   expect(jobAddService.open).toHaveBeenCalled();
-// });
-
 it("should show search", () => {
   expect(getByTestId(container, "search")).toBeTruthy();
 });
@@ -144,3 +134,19 @@ it("should show job detail when clicked", ()=>{
   });
 
 })
+
+describe('add job button', ()=>{
+  it('should open add job dialog box when clicked', ()=>{
+
+  jest.spyOn(jobAppDetail, "openNew").mockImplementation(() => {});
+
+  const jobAddBtn = getByTestId(container, "addBtn");
+
+  jobAddBtn.click();
+
+  expect(jobAppDetail.openNew).toHaveBeenCalled();
+
+
+  })
+})
+

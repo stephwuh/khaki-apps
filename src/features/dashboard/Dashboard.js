@@ -1,46 +1,48 @@
 import React, { useState, useEffect } from "react";
-import {Dialog, DialogContent, makeStyles} from '@material-ui/core';
+import { Dialog, DialogContent, makeStyles } from "@material-ui/core";
 import apiClient from "../../services/apiClient";
 import jobAddService from "../../services/jobAddService";
 import jobAppDetail from "../../services/jobAppDetail";
 import dashboard from "./dashboard.module.css";
 import JobAppDetail from "../jobAppDetail/JobAppDetail";
 
-
 const Dashboard = () => {
   const [jobAppState, setJobAppState] = useState([]);
-  const [jobDetailState, setJobDetailState] = useState({open: false});
+  const [jobDetailState, setJobDetailState] = useState({ open: false });
+
+  //state related to dialog box
+  const [jobDetailFormState, setJobDetailFormState] = useState(null);
 
   useEffect(() => {
     const jobAppDataPromise = apiClient.getApps();
 
     jobAppDataPromise.then((jobAppData) => setJobAppState(jobAppData));
-    
   }, []);
-
 
   /* 
     the dialog service exposes events with whether the dialog is closed or opened.
     so we can now use an useEffect to subscript to the events and then update the state
   */
 
-    useEffect(()=> {
-        const subscription = jobAppDetail.eventsStream.subscribe(state => setJobDetailState(state));
+  useEffect(() => {
+    const subscription = jobAppDetail.eventsStream.subscribe((state) =>
+      setJobDetailState(state)
+    );
 
-        return() => subscription.unsubscribe();
-
-    }, [])
-
+    return () => subscription.unsubscribe();
+  }, []);
 
   let jobApps = jobAppState.map((jobApp, index) => {
     return (
-      <div 
-        data-testid="job-app" 
-        key={index} 
+      <div
+        data-testid="job-app"
+        key={index}
         className={dashboard.jobs}
-        onClick={()=>{
-            jobAppDetail.open(jobApp);
-        }}>
+        onClick={() => {
+          setJobDetailFormState("update");
+          jobAppDetail.open(jobApp);
+        }}
+      >
         <div data-testid="company-name" className={dashboard.items}>
           <h5>Company</h5>
           {jobApp.company}
@@ -65,7 +67,6 @@ const Dashboard = () => {
     );
   });
 
-
   return (
     <div className={dashboard.container}>
       <div className={dashboard.btnContainer}>
@@ -74,7 +75,8 @@ const Dashboard = () => {
           data-testid="addBtn"
           type="button"
           onClick={() => {
-            jobAddService.open();
+            setJobDetailFormState("add");
+            jobAppDetail.openNew();
           }}
         >
           + Add Job
@@ -95,18 +97,20 @@ const Dashboard = () => {
         <button data-testid="stage-type">Stage</button>
       </div>
       {jobApps}
-    <Dialog 
-        maxWidth='md'
-        fullWidth = {true}
-        open ={jobDetailState.open}
+      <Dialog
+        maxWidth="md"
+        fullWidth={true}
+        open={jobDetailState.open}
         onClose={() => jobAppDetail.close()}
-        >
+      >
         <DialogContent>
-            <JobAppDetail jobApp={jobDetailState.jobApp}/>
+          <JobAppDetail
+            jobApp={jobDetailState.jobApp}
+            jobDetailFormState={jobDetailFormState}
+          />
         </DialogContent>
-    </Dialog>
+      </Dialog>
     </div>
-
   );
 };
 

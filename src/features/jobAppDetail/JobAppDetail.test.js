@@ -29,45 +29,97 @@ afterEach(() => {
     cleanup();
 });
 
-it('should show company name', () => {
-    expect(getByTestId(container, 'company').value).toBe("test company 1");
+describe('job app detail dialog box', ()=>{
+
+    it('should show saved company name', () => {
+        expect(getByTestId(container, 'company').value).toBe("test company 1");
+    })
+    
+    it('should show saved job title', () => {
+        expect(getByTestId(container, 'jobTitle').value).toBe("test job title 1");
+    })
+    
+    it('should show saved expected salary', () => {
+        expect(getByTestId(container, 'salary').value).toBe("test salary 1");
+    })
+    
+    it('should show saved job location', () => {
+        expect(getByTestId(container, 'location').value).toBe("test location 1");
+    })
+    
+    it('should show saved source webpage', () => {
+        expect(getByTestId(container, 'webpage').value).toBe("test webpage 1");
+    })
+    
+    it('should show saved contact name', () => {
+        expect(getByTestId(container, 'contactName').value).toBe("test contact name 1");
+    })
+    
+    it('should show saved contact number', () => {
+        expect(getByTestId(container, 'contactNumber').value).toBe("test contact number 1");
+    })
+    
+    it('should show saved job description', () => {
+        expect(getByTestId(container, 'description').value).toBe("test description 1");
+    })
+    
+    it('should show saved notes', () => {
+        expect(getByTestId(container, 'notes').value).toBe("test notes 1");
+    })
+    
+    it('should show saved application status', () => {
+        expect(getByTestId(container, 'status').value).toBe("test status 1");
+    })
+
 })
 
-it('should show job title', () => {
-    expect(getByTestId(container, 'jobTitle').value).toBe("test job title 1");
+describe('job app add new dialog box', ()=>{
+
+
+
+    it('company name input box should be blank', () => {
+        expect(getByTestId(container, 'company').value).toBe("test company 1");
+    })
+    
+    it('should show saved job title', () => {
+        expect(getByTestId(container, 'jobTitle').value).toBe("test job title 1");
+    })
+    
+    it('should show saved expected salary', () => {
+        expect(getByTestId(container, 'salary').value).toBe("test salary 1");
+    })
+    
+    it('should show saved job location', () => {
+        expect(getByTestId(container, 'location').value).toBe("test location 1");
+    })
+    
+    it('should show saved source webpage', () => {
+        expect(getByTestId(container, 'webpage').value).toBe("test webpage 1");
+    })
+    
+    it('should show saved contact name', () => {
+        expect(getByTestId(container, 'contactName').value).toBe("test contact name 1");
+    })
+    
+    it('should show saved contact number', () => {
+        expect(getByTestId(container, 'contactNumber').value).toBe("test contact number 1");
+    })
+    
+    it('should show saved job description', () => {
+        expect(getByTestId(container, 'description').value).toBe("test description 1");
+    })
+    
+    it('should show saved notes', () => {
+        expect(getByTestId(container, 'notes').value).toBe("test notes 1");
+    })
+    
+    it('should show saved application status', () => {
+        expect(getByTestId(container, 'status').value).toBe("test status 1");
+    })
+
 })
 
-it('should show expected salary', () => {
-    expect(getByTestId(container, 'salary').value).toBe("test salary 1");
-})
 
-it('should show job location', () => {
-    expect(getByTestId(container, 'location').value).toBe("test location 1");
-})
-
-it('should show source webpage', () => {
-    expect(getByTestId(container, 'webpage').value).toBe("test webpage 1");
-})
-
-it('should show contact name', () => {
-    expect(getByTestId(container, 'contactName').value).toBe("test contact name 1");
-})
-
-it('should show contact number', () => {
-    expect(getByTestId(container, 'contactNumber').value).toBe("test contact number 1");
-})
-
-it('should show job description', () => {
-    expect(getByTestId(container, 'description').value).toBe("test description 1");
-})
-
-it('should show notes', () => {
-    expect(getByTestId(container, 'notes').value).toBe("test notes 1");
-})
-
-it('should show application status', () => {
-    expect(getByTestId(container, 'status').value).toBe("test status 1");
-})
 
 it("should show job app edit button", () => {
 
@@ -85,8 +137,6 @@ expect(submitBtn).toBeTruthy;
 
 
 // fixing 'cannot read properties of null' error
-// if we close out of the dialog box
-// this will trigger the jobAppDetail close method event stream (jobAppDetail.js) will
 
 it('should show empty when no application provided', ()=>{
 

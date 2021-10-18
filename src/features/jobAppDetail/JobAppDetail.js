@@ -3,39 +3,28 @@ import apiClient from "../../services/apiClient";
 import jobAppDetail from "./jobAppDetail.module.css";
 
 const JobAppDetail = (props) => {
-
-if(!props.jobApp){
-    return <div data-testid='empty'></div>
-}
+  if (!props.jobApp) {
+    return <div data-testid="empty"></div>;
+  }
   const [editState, setEditState] = useState(false);
 
+  //state related to controlled inputs
   const [companyState, setCompanyState] = useState(props.jobApp.company);
-
   const [jobTitleState, setJobTitleState] = useState(props.jobApp.jobTitle);
-
   const [salaryState, setSalaryState] = useState(props.jobApp.salary);
-
   const [locationState, setLocationState] = useState(props.jobApp.location);
-
   const [webpageState, setWebpageState] = useState(props.jobApp.webpage);
-
   const [contactNameState, setContactNameState] = useState(
     props.jobApp.contactName
   );
-
   const [contactNumberState, setContactNumberState] = useState(
     props.jobApp.contactNumber
   );
-
   const [statusState, setStatusState] = useState(props.jobApp.status);
-
   const [descriptionState, setDescriptionState] = useState(
     props.jobApp.description
   );
-
   const [notesState, setNotesState] = useState(props.jobApp.notes);
-
-
 
   const handleCompanyOnChange = (e) => {
     setCompanyState(e.target.value);
@@ -77,22 +66,33 @@ if(!props.jobApp){
     setNotesState(e.target.value);
   };
 
-  const handleAppUpdate = (e) => {
-
-     apiClient.updateJobApp(props.jobApp.id, {
-        company: companyState,
-        jobTitle: jobTitleState,
-        location: locationState,
-        salary: salaryState,
-        status: statusState,
-        webpage: webpageState,
-        contactName: contactNameState,
-        contactNumber: contactNumberState,
-        description: descriptionState,
-        notes: notesState
-      });
-
-  }
+  const handleAppSubmit = (e) => {
+    props.jobDetailFormState === "add"
+      ? apiClient.addJobApp({
+          company: companyState,
+          jobTitle: jobTitleState,
+          location: locationState,
+          salary: salaryState,
+          status: statusState,
+          webpage: webpageState,
+          contactName: contactNameState,
+          contactNumber: contactNumberState,
+          description: descriptionState,
+          notes: notesState,
+        })
+      : apiClient.updateJobApp(props.jobApp.id, {
+          company: companyState,
+          jobTitle: jobTitleState,
+          location: locationState,
+          salary: salaryState,
+          status: statusState,
+          webpage: webpageState,
+          contactName: contactNameState,
+          contactNumber: contactNumberState,
+          description: descriptionState,
+          notes: notesState,
+        });
+  };
 
   return (
     <form>
@@ -203,13 +203,15 @@ if(!props.jobApp){
         </div>
       </div>
       <div className={jobAppDetail.btnContainer}>
-        {/* <button>Close</button> */}
+        {/* <button data-testId='closeBtn'>Close</button> */}
         <button
-            data-testid="submitBtn"
-            onClick={handleAppUpdate}
-            type="submit"
-            disabled={!editState}
-            >Submit</button>
+          data-testid="submitBtn"
+          onClick={handleAppSubmit}
+          type="submit"
+          disabled={!editState}
+        >
+          Submit
+        </button>
         <button
           data-testid="editBtn"
           onClick={() => {
