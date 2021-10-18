@@ -79,8 +79,6 @@ if(!props.jobApp){
 
   const handleAppUpdate = (e) => {
 
-    e.preventDefault();
-
      apiClient.updateJobApp(props.jobApp.id, {
         company: companyState,
         jobTitle: jobTitleState,
@@ -206,10 +204,11 @@ if(!props.jobApp){
       </div>
       <div className={jobAppDetail.btnContainer}>
         {/* <button>Close</button> */}
-        <button 
+        <button
             data-testid="submitBtn"
             onClick={handleAppUpdate}
-            // type="button"
+            type="submit"
+            disabled={!editState}
             >Submit</button>
         <button
           data-testid="editBtn"
