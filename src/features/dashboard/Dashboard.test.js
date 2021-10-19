@@ -94,7 +94,6 @@ it("should show search", () => {
 });
 
 it("should show filters", () => {
-  expect(getByTestId(container, "date-type")).toBeTruthy();
   expect(getByTestId(container, "company-type")).toBeTruthy();
   expect(getByTestId(container, "job-title-type")).toBeTruthy();
   expect(getByTestId(container, "location-type")).toBeTruthy();

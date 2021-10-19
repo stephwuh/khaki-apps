@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Dialog, DialogContent, makeStyles } from "@material-ui/core";
 import apiClient from "../../services/apiClient";
-import jobAddService from "../../services/jobAddService";
 import jobAppDetail from "../../services/jobAppDetail";
 import dashboard from "./dashboard.module.css";
 import JobAppDetail from "../jobAppDetail/JobAppDetail";
+import sortFunction from "../../services/sort";
 
 const Dashboard = () => {
   const [jobAppState, setJobAppState] = useState([]);
@@ -123,6 +123,86 @@ const Dashboard = () => {
 
     })
 
+    // sortFunction.sortApp(jobApps, company)
+
+    setFilteredJobAppState(jobApps)
+
+  }
+
+  const handleTitleOnClick = () => {
+
+    let jobApps = [...jobAppState]
+
+    jobApps.sort((a,b) => {
+
+      const jobTitleA = a.jobTitle.toLowerCase();
+      const jobTitleB = b.jobTitle.toLowerCase();
+
+      let comparison = 0;
+      
+      if (jobTitleA > jobTitleB) {
+        comparison = 1;
+      } else if (jobTitleA < jobTitleB) {
+        comparison = -1;
+      }
+
+      return comparison;
+
+    })
+
+
+    setFilteredJobAppState(jobApps)
+
+  }
+
+  const handleLocationOnClick = () => {
+
+    let jobApps = [...jobAppState]
+
+    jobApps.sort((a,b) => {
+
+      const locationA = a.location.toLowerCase();
+      const locationB = b.location.toLowerCase();
+
+      let comparison = 0;
+      
+      if (locationA > locationB) {
+        comparison = 1;
+      } else if (locationA < locationB) {
+        comparison = -1;
+      }
+
+      return comparison;
+
+    })
+
+
+    setFilteredJobAppState(jobApps)
+
+  }
+
+  const handleStatusOnClick = () => {
+
+    let jobApps = [...jobAppState]
+
+    jobApps.sort((a,b) => {
+
+      const statusA = a.status.toLowerCase();
+      const statusB = b.status.toLowerCase();
+
+      let comparison = 0;
+      
+      if (statusA > statusB) {
+        comparison = 1;
+      } else if (statusA < statusB) {
+        comparison = -1;
+      }
+
+      return comparison;
+
+    })
+
+
     setFilteredJobAppState(jobApps)
 
   }
@@ -153,13 +233,16 @@ const Dashboard = () => {
         />
       </form>
       <div className={dashboard.filters}>
-        <button data-testid="date-type">Date</button>
         <button 
           data-testid="company-type"
           onClick={handleCompanyOnClick}>Company</button>
-        <button data-testid="job-title-type">Job Title</button>
-        <button data-testid="location-type">Location</button>
-        <button data-testid="stage-type">Stage</button>
+        <button 
+          data-testid="job-title-type"
+          onClick={handleTitleOnClick}>Job Title</button>
+        <button data-testid="location-type"
+        onClick={handleLocationOnClick} >Location</button>
+        <button data-testid="stage-type"
+        onClick={handleStatusOnClick} >Status</button>
       </div>
       {jobApps}
       <Dialog
