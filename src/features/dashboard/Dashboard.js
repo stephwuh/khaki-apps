@@ -83,11 +83,47 @@ const Dashboard = () => {
 
     let result = jobAppState.filter((data)=>{
 
-      return data.company.search(searchValue) != -1;
+      return (
+        data.company.search(searchValue) !== -1 || 
+        data.jobTitle.search(searchValue) !== -1 ||
+        data.location.search(searchValue) !== -1 ||
+        data.salary.search(searchValue) !== -1 ||
+        data.status.search(searchValue) !== -1 ||
+        data.webpage.search(searchValue) !== -1 ||
+        data.contactName.search(searchValue) !== -1 ||
+        data.contactNumber.search(searchValue) !== -1 ||
+        data.description.search(searchValue) !== -1 ||
+        data.notes.search(searchValue) !== -1
+      )
 
     });
 
     setFilteredJobAppState(result);
+
+  }
+
+  const handleCompanyOnClick = () => {
+
+    let jobApps = [...jobAppState]
+
+    jobApps.sort((a,b) => {
+
+      const companyA = a.company.toLowerCase();
+      const companyB = b.company.toLowerCase();
+
+      let comparison = 0;
+      
+      if (companyA > companyB) {
+        comparison = 1;
+      } else if (companyA < companyB) {
+        comparison = -1;
+      }
+
+      return comparison;
+
+    })
+
+    setFilteredJobAppState(jobApps)
 
   }
 
@@ -118,7 +154,9 @@ const Dashboard = () => {
       </form>
       <div className={dashboard.filters}>
         <button data-testid="date-type">Date</button>
-        <button data-testid="company-type">Company</button>
+        <button 
+          data-testid="company-type"
+          onClick={handleCompanyOnClick}>Company</button>
         <button data-testid="job-title-type">Job Title</button>
         <button data-testid="location-type">Location</button>
         <button data-testid="stage-type">Stage</button>

@@ -18,7 +18,7 @@ beforeEach(async () => {
     return Promise.resolve([
       {
         id: 1,
-        company: "test company 1",
+        company: "youtube",
         jobTitle: "test job title 1",
         location: "test location 1",
         salary: "test salary 1",
@@ -31,7 +31,7 @@ beforeEach(async () => {
       },
       {
         id: 2,
-        company: "test company 2",
+        company: "amazon",
         jobTitle: "test job title 2",
         location: "test location 2",
         salary: "test salary 2",
@@ -44,7 +44,7 @@ beforeEach(async () => {
       },
       {
         id: 3,
-        company: "search filter test",
+        company: "search filter test 1",
         jobTitle: "test job title 3",
         location: "test location 3",
         salary: "test salary 3",
@@ -57,7 +57,7 @@ beforeEach(async () => {
       },
       {
         id: 4,
-        company: "search filter test",
+        company: "search filter test 2",
         jobTitle: "test job title 4",
         location: "test location 4",
         salary: "test salary 4",
@@ -115,7 +115,7 @@ it("should show company name of job applications", () => {
 
   const companyNames = getAllByTestId(container, "company-name");
 
-  expect(getNodeText(companyNames[0])).toBe("test company 1");
+  expect(getNodeText(companyNames[0])).toBe("youtube");
 });
 
 it("should show job title of job applications", () => {
@@ -152,7 +152,7 @@ it("should show job detail when clicked", ()=>{
 
   expect(jobAppDetail.open).toHaveBeenCalledWith({
     id: 1,
-    company: "test company 1",
+    company: "youtube",
     jobTitle: "test job title 1",
     location: "test location 1",
     salary: "test salary 1",
@@ -182,6 +182,10 @@ describe('add job button', ()=>{
 
 
 describe('job app search input field', () => {
+
+  //search filter function applies to all categories
+  //but below I only tested for company name. do i need to check all categories?
+
   it('should filter job applications according to what was typed into the input field', ()=> {
 
     const search = getByTestId(container, "search");
@@ -195,11 +199,44 @@ describe('job app search input field', () => {
 
     expect(companyNames.length).toEqual(2);
 
-    expect(getNodeText(companyNames[0])).toEqual('search filter test');
+    expect(getNodeText(companyNames[0])).toEqual('search filter test 1');
 
-    expect(getNodeText(companyNames[1])).toEqual('search filter test');
+    expect(getNodeText(companyNames[1])).toEqual('search filter test 2');
     
 
   })
 })
 
+
+describe('filter buttons', () => {
+
+  it('should filter the job apps by company name in alphabetical order when clicked', ()=> {
+
+
+    //I test whether the content is rendered correctly 
+    //when the company button is clicked
+    //do i need to mock the sort function?
+
+    const company = getByTestId(container, "company-type");
+
+    company.click();
+
+    const companyNames = getAllByTestId(container, "company-name");
+
+    expect(getNodeText(companyNames[0])).toEqual('amazon');
+
+    expect(getNodeText(companyNames[1])).toEqual('search filter test 1');
+
+    expect(getNodeText(companyNames[2])).toEqual('search filter test 2');
+
+    expect(getNodeText(companyNames[3])).toEqual('youtube');
+
+  })
+})
+
+
+// expect(getByTestId(container, "date-type")).toBeTruthy();
+// expect(getByTestId(container, "company-type")).toBeTruthy();
+// expect(getByTestId(container, "job-title-type")).toBeTruthy();
+// expect(getByTestId(container, "location-type")).toBeTruthy();
+// expect(getByTestId(container, "stage-type")).toBeTruthy();
