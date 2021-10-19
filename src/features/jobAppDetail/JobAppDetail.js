@@ -66,9 +66,12 @@ const JobAppDetail = (props) => {
     setNotesState(e.target.value);
   };
 
-  const handleAppSubmit = (e) => {
-    props.jobDetailFormState === "add"
-      ? apiClient.addJobApp({
+  const handleAppSubmit = async (e) => {
+
+    // e.preventDefault()
+
+    let response = props.jobDetailFormState === "add"
+      ? await apiClient.addJobApp({
           company: companyState,
           jobTitle: jobTitleState,
           location: locationState,
@@ -80,7 +83,7 @@ const JobAppDetail = (props) => {
           description: descriptionState,
           notes: notesState,
         })
-      : apiClient.updateJobApp(props.jobApp.id, {
+      : await apiClient.updateJobApp(props.jobApp.id, {
           company: companyState,
           jobTitle: jobTitleState,
           location: locationState,
@@ -92,6 +95,7 @@ const JobAppDetail = (props) => {
           description: descriptionState,
           notes: notesState,
         });
+
   };
 
   const handleDeleteOnClick = () => {

@@ -13,10 +13,18 @@ const Dashboard = () => {
   //state related to dialog box
   const [jobDetailFormState, setJobDetailFormState] = useState(null);
 
+
+  const [searchState, setSearchState] = useState("");
+  const [filteredJobAppState, setFilteredJobAppState] = useState([]);
+
+
   useEffect(() => {
     const jobAppDataPromise = apiClient.getApps();
 
-    jobAppDataPromise.then((jobAppData) => setJobAppState(jobAppData));
+    jobAppDataPromise.then((jobAppData) => {
+      setJobAppState(jobAppData);
+      setFilteredJobAppState(jobAppData);
+    });
   }, []);
 
   /* 
@@ -32,7 +40,7 @@ const Dashboard = () => {
     return () => subscription.unsubscribe();
   }, []);
 
-  let jobApps = jobAppState.map((jobApp, index) => {
+  let jobApps = filteredJobAppState.map((jobApp, index) => {
     return (
       <div
         data-testid="job-app"
@@ -67,6 +75,22 @@ const Dashboard = () => {
     );
   });
 
+  const handleSearchOnChange = e => {
+
+    setSearchState(e.target.value)
+
+    let searchValue = e.target.value.toLowerCase();
+
+    let result = jobAppState.filter((data)=>{
+
+      return data.company.search(searchValue) != -1;
+
+    });
+
+    setFilteredJobAppState(result);
+
+  }
+
   return (
     <div className={dashboard.container}>
       <div className={dashboard.btnContainer}>
@@ -82,11 +106,14 @@ const Dashboard = () => {
           + Add Job
         </button>
       </div>
-      <form data-testid="search">
+      <form>
         <input
+          data-testid="search"
           type="text"
           className={dashboard.search}
           placeholder="search job app"
+          onChange={handleSearchOnChange}
+          value={searchState}
         />
       </form>
       <div className={dashboard.filters}>

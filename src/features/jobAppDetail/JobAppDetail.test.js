@@ -263,8 +263,6 @@ describe('submit button', () => {
 
     })
 
-
-
     it('should submit the form after clicking submit button', ()=>{
 
         const submittedMockedJobApp = {
@@ -297,6 +295,7 @@ describe('submit button', () => {
         expect(apiClient.updateJobApp).toHaveBeenCalledWith(mockedJobApp.id,submittedMockedJobApp);
 
     })
+
 
 })
 

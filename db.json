@@ -1,19 +1,6 @@
 {
   "job-app": [
     {
-      "company": "ryan sonshine",
-      "jobTitle": "update job title",
-      "location": "update location",
-      "salary": "update salary",
-      "status": "update application status",
-      "webpage": "update webpage",
-      "contactName": "update contact name",
-      "contactNumber": "update contact number",
-      "description": "update job description",
-      "notes": "update notes",
-      "id": 1
-    },
-    {
       "company": "revised",
       "jobTitle": "test job title 2",
       "location": "test location 2",

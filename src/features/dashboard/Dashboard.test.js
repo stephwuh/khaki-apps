@@ -6,6 +6,7 @@ import {
   render,
   getNodeText,
   getByTestId,
+  fireEvent
 } from "@testing-library/react";
 import apiClient from "../../services/apiClient";
 import jobAppDetail from "../../services/jobAppDetail";
@@ -16,32 +17,56 @@ beforeEach(async () => {
   jest.spyOn(apiClient, "getApps").mockImplementation(() => {
     return Promise.resolve([
       {
+        id: 1,
         company: "test company 1",
         jobTitle: "test job title 1",
         location: "test location 1",
         salary: "test salary 1",
         status: "test status 1",
+        webpage: "test webpage 1",
+        contactName: "test contact name 1",
+        contactNumber: "test contact number 1",
+        description: "test description 1",
+        notes: "test notes 1"
       },
       {
+        id: 2,
         company: "test company 2",
         jobTitle: "test job title 2",
         location: "test location 2",
         salary: "test salary 2",
         status: "test status 2",
+        webpage: "test webpage 2",
+        contactName: "test contact name 2",
+        contactNumber: "test contact number 2",
+        description: "test description 2",
+        notes: "test notes 2"
       },
       {
-        company: "test company 3",
+        id: 3,
+        company: "search filter test",
         jobTitle: "test job title 3",
         location: "test location 3",
         salary: "test salary 3",
         status: "test status 3",
+        webpage: "test webpage 3",
+        contactName: "test contact name 3",
+        contactNumber: "test contact number 3",
+        description: "test description 3",
+        notes: "test notes 3"
       },
       {
-        company: "test company 4",
+        id: 4,
+        company: "search filter test",
         jobTitle: "test job title 4",
         location: "test location 4",
         salary: "test salary 4",
         status: "test status 4",
+        webpage: "test webpage 4",
+        contactName: "test contact name 4",
+        contactNumber: "test contact number 4",
+        description: "test description 4",
+        notes: "test notes 4"
       },
     ]);
   });
@@ -126,14 +151,20 @@ it("should show job detail when clicked", ()=>{
   jobAppDetailLink[0].click();
 
   expect(jobAppDetail.open).toHaveBeenCalledWith({
+    id: 1,
     company: "test company 1",
     jobTitle: "test job title 1",
     location: "test location 1",
     salary: "test salary 1",
     status: "test status 1",
+    webpage: "test webpage 1",
+    contactName: "test contact name 1",
+    contactNumber: "test contact number 1",
+    description: "test description 1",
+    notes: "test notes 1"
   });
 
-})
+});
 
 describe('add job button', ()=>{
   it('should open add job dialog box when clicked', ()=>{
@@ -146,6 +177,28 @@ describe('add job button', ()=>{
 
   expect(jobAppDetail.openNew).toHaveBeenCalled();
 
+  });
+});
+
+
+describe('job app search input field', () => {
+  it('should filter job applications according to what was typed into the input field', ()=> {
+
+    const search = getByTestId(container, "search");
+
+    fireEvent.change(
+      search,
+      { target: {value: 'search filter test'}}
+    )
+
+    const companyNames = getAllByTestId(container, "company-name");
+
+    expect(companyNames.length).toEqual(2);
+
+    expect(getNodeText(companyNames[0])).toEqual('search filter test');
+
+    expect(getNodeText(companyNames[1])).toEqual('search filter test');
+    
 
   })
 })
