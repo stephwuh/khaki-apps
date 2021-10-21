@@ -3,18 +3,34 @@
   margin: 0px;
   box-sizing: border-box;
   font-size: 12px;
-
 }
 
-body{
-  background-color: #FAFAFA;
-}
-.page-container{
-  display: flex; 
-  height: 100%;
-  width: 100%;
 
+/* #root{
+  background-color: #5F634F;
+  height: 100vh;
+} */
+
+html, body{
+  background-color: #5F634F;
+  height: 100vh;
 }
+
+.background{
+  background-color:#FAFAFA;
+  height: 100vh;
+}
+
+
+.addBtn{
+  left: 90%;
+  top: -30px;
+}
+
+.job-overview{
+  height: 100px;
+}
+
 
 
 /* material UI dialog box css setting override */
