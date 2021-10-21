@@ -6,12 +6,7 @@
 }
 
 
-/* #root{
-  background-color: #5F634F;
-  height: 100vh;
-} */
-
-html, body{
+body{
   background-color: #5F634F;
   height: 100vh;
 }

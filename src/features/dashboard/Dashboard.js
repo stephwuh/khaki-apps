@@ -256,7 +256,11 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
-      {jobApps}
+      <div className='row'>
+        <div className='col'>
+          {jobApps}
+        </div>
+      </div>
       <Dialog
         maxWidth="md"
         fullWidth={true}
