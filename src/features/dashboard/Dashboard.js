@@ -43,7 +43,7 @@ const Dashboard = () => {
     return (
         <div
           data-testid="job-app"
-          className='row h-25'
+          className='row row-cols-5 my-3 gx-0 border rounded bg-white job-overview'
           key={index}
           onClick={() => {
             setJobDetailFormState("update");
@@ -52,38 +52,38 @@ const Dashboard = () => {
         >
           <div
             data-testid="company-name"
-            className='col'
+            className='col text-center my-auto py-5'
           >
             <h5>Company</h5>
-            {jobApp.company}
+            <p className='wrap-content'>{jobApp.company}</p>
           </div>
           <div
             data-testid="job-title"
-            className='col'
+            className='col text-center my-auto'
           >
             <h5>Job Title</h5>
-            {jobApp.jobTitle}
+            <p className='wrap-content'>{jobApp.jobTitle}</p>
           </div>
           <div
             data-testid="location"
-            className='col'
+            className='col text-center my-auto'
           >
             <h5>Location</h5>
-            {jobApp.location}
+            <p className='wrap-content'>{jobApp.location}</p>
           </div>
           <div
             data-testid="salary"
-            className='col'
+            className='col text-center my-auto'
           >
             <h5>Salary</h5>
-            {jobApp.salary}
+            <p className='wrap-content'>{jobApp.salary}</p>
           </div>
           <div
             data-testid="status"
-            className='col'
+            className='col text-center my-auto'
           >
             <h5>Status</h5>
-            {jobApp.status}
+            <p className='wrap-content'>{jobApp.status}</p>
           </div>
         </div>
     );
@@ -209,7 +209,7 @@ const Dashboard = () => {
         <div>
           <button
             data-testid="addBtn"
-            className="position-relative addBtn"
+            className="position-relative btn border addBtn"
             type="button"
             onClick={() => {
               setJobDetailFormState("add");
@@ -226,7 +226,7 @@ const Dashboard = () => {
           <input
             data-testid="search"
             type="text"
-            // className={dashboard.search}
+            className='rounded'
             placeholder="search job app"
             onChange={handleSearchOnChange}
             value={searchState}
@@ -234,33 +234,33 @@ const Dashboard = () => {
         </form>
       </div>
 
-      <div className="row">
+      <div className="row my-3">
         <div className="col">
-          <button data-testid="company-type" onClick={handleCompanyOnClick}>
+          <button className='btn btn-secondary btn-md border' data-testid="company-type" onClick={handleCompanyOnClick}>
             Company
           </button>
-        </div>
-        <div className="col">
-          <button data-testid="job-title-type" onClick={handleTitleOnClick}>
+        
+      
+          <button className='btn btn-secondary btn-md border' data-testid="job-title-type" onClick={handleTitleOnClick}>
             Job Title
           </button>
-        </div>
-        <div className="col">
-          <button data-testid="location-type" onClick={handleLocationOnClick}>
+      
+      
+          <button className='btn btn-secondary btn-md border' data-testid="location-type" onClick={handleLocationOnClick}>
             Location
           </button>
-        </div>
-        <div className="col">
-          <button data-testid="stage-type" onClick={handleStatusOnClick}>
+      
+      
+          <button className='btn btn-secondary btn-md border' data-testid="stage-type" onClick={handleStatusOnClick}>
             Status
           </button>
         </div>
       </div>
-      <div className='row'>
-        <div className='col'>
+      {/* <div className='row'>
+        <div className='col'> */}
           {jobApps}
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
       <Dialog
         maxWidth="md"
         fullWidth={true}

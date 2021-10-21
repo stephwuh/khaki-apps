@@ -6,26 +6,40 @@
 }
 
 
+
 body{
   background-color: #5F634F;
-  height: 100vh;
+  /* height: 100vh; */
 }
+
 
 .background{
   background-color:#FAFAFA;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 
 .addBtn{
   left: 90%;
   top: -30px;
+  background-color: #F5BB00;
 }
 
 .job-overview{
-  height: 100px;
+  /* height: 30%; */
 }
 
+.buttons{
+  width: 50%;
+}
+.buttons button{
+  width: 7rem;
+  /* background-color: #F5BB00; */
+}
+
+.wrap-content{
+  word-wrap: break-word;
+}
 
 
 /* material UI dialog box css setting override */
