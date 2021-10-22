@@ -67,35 +67,34 @@ const JobAppDetail = (props) => {
   };
 
   const handleAppSubmit = async (e) => {
-
     // e.preventDefault()
 
-    let response = props.jobDetailFormState === "add"
-      ? await apiClient.addJobApp({
-          company: companyState,
-          jobTitle: jobTitleState,
-          location: locationState,
-          salary: salaryState,
-          status: statusState,
-          webpage: webpageState,
-          contactName: contactNameState,
-          contactNumber: contactNumberState,
-          description: descriptionState,
-          notes: notesState,
-        })
-      : await apiClient.updateJobApp(props.jobApp.id, {
-          company: companyState,
-          jobTitle: jobTitleState,
-          location: locationState,
-          salary: salaryState,
-          status: statusState,
-          webpage: webpageState,
-          contactName: contactNameState,
-          contactNumber: contactNumberState,
-          description: descriptionState,
-          notes: notesState,
-        });
-
+    let response =
+      props.jobDetailFormState === "add"
+        ? await apiClient.addJobApp({
+            company: companyState,
+            jobTitle: jobTitleState,
+            location: locationState,
+            salary: salaryState,
+            status: statusState,
+            webpage: webpageState,
+            contactName: contactNameState,
+            contactNumber: contactNumberState,
+            description: descriptionState,
+            notes: notesState,
+          })
+        : await apiClient.updateJobApp(props.jobApp.id, {
+            company: companyState,
+            jobTitle: jobTitleState,
+            location: locationState,
+            salary: salaryState,
+            status: statusState,
+            webpage: webpageState,
+            contactName: contactNameState,
+            contactNumber: contactNumberState,
+            description: descriptionState,
+            notes: notesState,
+          });
   };
 
   const handleDeleteOnClick = () => {
@@ -103,143 +102,155 @@ const JobAppDetail = (props) => {
   };
 
   return (
-    <form>
-      <div className={jobAppDetail.itemContainer3}>
-        <div className={jobAppDetail.item}>
-          <h5>Company</h5>
-          <input
-            data-testid="company"
-            type="text"
-            value={companyState}
-            disabled={!editState}
-            onChange={handleCompanyOnChange}
-          />
+    <div className="container">
+      <form>
+        <div className='row mb-3'>
+          <div className='col-4'>
+            <h5>Company</h5>
+            <input
+              data-testid="company"
+              type="text"
+              value={companyState}
+              disabled={!editState}
+              onChange={handleCompanyOnChange}
+            />
+          </div>
+          <div className='col-4'>
+            <h5>Job Title</h5>
+            <input
+              data-testid="jobTitle"
+              type="text"
+              value={jobTitleState}
+              disabled={!editState}
+              onChange={handleJobTitleOnChange}
+            />
+          </div>
+          <div className='col-4'>
+            <h5>Expected Salary</h5>
+            <input
+              data-testid="salary"
+              type="text"
+              value={salaryState}
+              disabled={!editState}
+              onChange={handleSalaryOnChange}
+            />
+          </div>
         </div>
-        <div className={jobAppDetail.item}>
-          <h5>Job Title</h5>
-          <input
-            data-testid="jobTitle"
-            type="text"
-            value={jobTitleState}
-            disabled={!editState}
-            onChange={handleJobTitleOnChange}
-          />
+        <div className='row my-3'>
+          <div className='col-6'>
+            <h5>Location</h5>
+            <input
+              data-testid="location"
+              type="text"
+              value={locationState}
+              disabled={!editState}
+              onChange={handleLocationOnChange}
+            />
+          </div>
+          <div className='col-6'>
+            <h5>Source Webpage</h5>
+            <input
+              data-testid="webpage"
+              type="text"
+              value={webpageState}
+              disabled={!editState}
+              onChange={handleWebpageOnChange}
+            />
+          </div>
         </div>
-        <div className={jobAppDetail.item}>
-          <h5>Expected Salary</h5>
-          <input
-            data-testid="salary"
-            type="text"
-            value={salaryState}
-            disabled={!editState}
-            onChange={handleSalaryOnChange}
-          />
+        <div className='row my-3'>
+          <div className='col-4'>
+            <h5>Contact Name</h5>
+            <input
+              data-testid="contactName"
+              type="text"
+              value={contactNameState}
+              disabled={!editState}
+              onChange={handleContactNameOnChange}
+            />
+          </div>
+          <div className='col-4'>
+            <h5>Contact Number</h5>
+            <input
+              data-testid="contactNumber"
+              type="text"
+              value={contactNumberState}
+              disabled={!editState}
+              onChange={handleContactNumberOnChange}
+            />
+          </div>
+          <div className='col-4'>
+            <h5>Application Status</h5>
+            <input
+              data-testid="status"
+              type="text"
+              value={statusState}
+              disabled={!editState}
+              onChange={handleStatusOnChange}
+            />
+          </div>
         </div>
-      </div>
-      <div className={jobAppDetail.itemContainer2}>
-        <div className={jobAppDetail.item}>
-          <h5>Location</h5>
-          <input
-            data-testid="location"
-            type="text"
-            value={locationState}
-            disabled={!editState}
-            onChange={handleLocationOnChange}
-          />
+        <div className='row my-3'>
+          <div className='col-6'>
+            <h5>Job Description</h5>
+            <textarea
+              data-testid="description"
+              value={descriptionState}
+              disabled={!editState}
+              onChange={handleDescriptionOnChange}
+            />
+          </div>
+          <div className='col-6'>
+            <h5>Notes</h5>
+            <textarea
+              data-testid="notes"
+              value={notesState}
+              disabled={!editState}
+              onChange={handleNotesOnChange}
+            />
+          </div>
         </div>
-        <div className={jobAppDetail.item}>
-          <h5>Source Webpage</h5>
-          <input
-            data-testid="webpage"
-            type="text"
-            value={webpageState}
-            disabled={!editState}
-            onChange={handleWebpageOnChange}
-          />
-        </div>
-      </div>
-      <div className={jobAppDetail.itemContainer3}>
-        <div className={jobAppDetail.item}>
-          <h5>Contact Name</h5>
-          <input
-            data-testid="contactName"
-            type="text"
-            value={contactNameState}
-            disabled={!editState}
-            onChange={handleContactNameOnChange}
-          />
-        </div>
-        <div className={jobAppDetail.item}>
-          <h5>Contact Number</h5>
-          <input
-            data-testid="contactNumber"
-            type="text"
-            value={contactNumberState}
-            disabled={!editState}
-            onChange={handleContactNumberOnChange}
-          />
-        </div>
-        <div className={jobAppDetail.item}>
-          <h5>Application Status</h5>
-          <input
-            data-testid="status"
-            type="text"
-            value={statusState}
-            disabled={!editState}
-            onChange={handleStatusOnChange}
-          />
-        </div>
-      </div>
-      <div className={jobAppDetail.itemContainer2}>
-        <div className={jobAppDetail.item}>
-          <h5>Job Description</h5>
-          <textarea
-            data-testid="description"
-            value={descriptionState}
-            disabled={!editState}
-            onChange={handleDescriptionOnChange}
-          />
-        </div>
-        <div className={jobAppDetail.item}>
-          <h5>Notes</h5>
-          <textarea
-            data-testid="notes"
-            value={notesState}
-            disabled={!editState}
-            onChange={handleNotesOnChange}
-          />
-        </div>
-      </div>
-      <div className={jobAppDetail.btnContainer}>
-        {props.jobDetailFormState === "update" && (
+        <div className='row justify-content-end gx-0'>
+        <div className='col-1 px-0 mx-1'>
           <button
-            data-testid="deleteBtn"
-            disabled={!editState}
-            onClick={handleDeleteOnClick}
+            data-testid="editBtn"
+            className="btn border w-100   addBtn"
+            onClick={() => {
+              setEditState(!editState);
+            }}
+            type="button"
           >
-            Delete
+            Edit
           </button>
-        )}
-        ;
-        <button
-          data-testid="submitBtn"
-          onClick={handleAppSubmit}
-          type="submit"
-          disabled={!editState}
-        >
-          Submit
-        </button>
-        <button
-          data-testid="editBtn"
-          onClick={() => {
-            setEditState(!editState);
-          }}
-          type="button"
-        >
-          Edit
-        </button>
-      </div>
-    </form>
+          </div>
+          
+          <div className='col-1 px-0 mx-1'>
+          <button
+            data-testid="submitBtn"
+            className="btn border w-100 addBtn"
+            onClick={handleAppSubmit}
+            type="submit"
+            disabled={!editState}
+          >
+            Submit
+          </button>
+          </div>
+          
+          <div className='col-1 px-0 mx-1'>
+          {props.jobDetailFormState === "update" && (
+            <button
+              data-testid="deleteBtn"
+              className="btn border w-100 addBtn"
+              disabled={!editState}
+              onClick={handleDeleteOnClick}
+            >
+              Delete
+            </button>
+          )}
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 
