@@ -80,7 +80,7 @@ beforeEach(async () => {
 it("should show page title", () => {
   const title = getByTestId(container, "title");
 
-  expect(getNodeText(title)).toBe("Job Applications");
+  expect(getNodeText(title)).toBe("Job Application Board");
 });
 
 it("should show job app add button", () => {
@@ -114,7 +114,7 @@ it("should show company name of job applications", () => {
 
   const companyNames = getAllByTestId(container, "company-name");
 
-  expect(getNodeText(companyNames[0])).toBe("youtube");
+  expect(getNodeText(companyNames[0])).toEqual("youtube");
 });
 
 it("should show job title of job applications", () => {

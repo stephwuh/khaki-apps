@@ -51,27 +51,29 @@ const Dashboard = () => {
         }}
       >
         <div
-          data-testid="company-name"
+          // data-testid="company-name"
           className="col text-center my-auto py-5"
         >
           <h5>Company</h5>
-          <p className="wrap-content">{jobApp.company}</p>
+          <p 
+          data-testid="company-name"
+          className="wrap-content">{jobApp.company}</p>
         </div>
-        <div data-testid="job-title" className="col text-center my-auto">
+        <div className="col text-center my-auto">
           <h5>Job Title</h5>
-          <p className="wrap-content">{jobApp.jobTitle}</p>
+          <p data-testid="job-title" className="wrap-content">{jobApp.jobTitle}</p>
         </div>
-        <div data-testid="location" className="col text-center my-auto">
+        <div  className="col text-center my-auto">
           <h5>Location</h5>
-          <p className="wrap-content">{jobApp.location}</p>
+          <p data-testid="location" className="wrap-content">{jobApp.location}</p>
         </div>
-        <div data-testid="salary" className="col text-center my-auto">
+        <div  className="col text-center my-auto">
           <h5>Salary</h5>
-          <p className="wrap-content">{jobApp.salary}</p>
+          <p data-testid="salary" className="wrap-content">{jobApp.salary}</p>
         </div>
-        <div data-testid="status" className="col text-center my-auto">
+        <div  className="col text-center my-auto">
           <h5>Status</h5>
-          <p className="wrap-content">{jobApp.status}</p>
+          <p data-testid="status" className="wrap-content">{jobApp.status}</p>
         </div>
       </div>
     );
@@ -191,7 +193,7 @@ const Dashboard = () => {
       <div className="row my-5 w-100 mx-auto">
         <div className="col-12">
           <h3 data-testid="title" className="text-center">
-            Job Application Status Board
+            Job Application Board
           </h3>
         </div>
       </div>

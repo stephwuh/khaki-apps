@@ -15,7 +15,7 @@ body{
 
 .background{
   background-color:#FAFAFA;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .addBtn{
