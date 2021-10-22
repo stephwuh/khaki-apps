@@ -41,51 +41,39 @@ const Dashboard = () => {
 
   let jobApps = filteredJobAppState.map((jobApp, index) => {
     return (
+      <div
+        data-testid="job-app"
+        className="row row-cols-5 my-3 gx-0 border rounded bg-white job-overview"
+        key={index}
+        onClick={() => {
+          setJobDetailFormState("update");
+          jobAppDetail.open(jobApp);
+        }}
+      >
         <div
-          data-testid="job-app"
-          className='row row-cols-5 my-3 gx-0 border rounded bg-white job-overview'
-          key={index}
-          onClick={() => {
-            setJobDetailFormState("update");
-            jobAppDetail.open(jobApp);
-          }}
+          data-testid="company-name"
+          className="col text-center my-auto py-5"
         >
-          <div
-            data-testid="company-name"
-            className='col text-center my-auto py-5'
-          >
-            <h5>Company</h5>
-            <p className='wrap-content'>{jobApp.company}</p>
-          </div>
-          <div
-            data-testid="job-title"
-            className='col text-center my-auto'
-          >
-            <h5>Job Title</h5>
-            <p className='wrap-content'>{jobApp.jobTitle}</p>
-          </div>
-          <div
-            data-testid="location"
-            className='col text-center my-auto'
-          >
-            <h5>Location</h5>
-            <p className='wrap-content'>{jobApp.location}</p>
-          </div>
-          <div
-            data-testid="salary"
-            className='col text-center my-auto'
-          >
-            <h5>Salary</h5>
-            <p className='wrap-content'>{jobApp.salary}</p>
-          </div>
-          <div
-            data-testid="status"
-            className='col text-center my-auto'
-          >
-            <h5>Status</h5>
-            <p className='wrap-content'>{jobApp.status}</p>
-          </div>
+          <h5>Company</h5>
+          <p className="wrap-content">{jobApp.company}</p>
         </div>
+        <div data-testid="job-title" className="col text-center my-auto">
+          <h5>Job Title</h5>
+          <p className="wrap-content">{jobApp.jobTitle}</p>
+        </div>
+        <div data-testid="location" className="col text-center my-auto">
+          <h5>Location</h5>
+          <p className="wrap-content">{jobApp.location}</p>
+        </div>
+        <div data-testid="salary" className="col text-center my-auto">
+          <h5>Salary</h5>
+          <p className="wrap-content">{jobApp.salary}</p>
+        </div>
+        <div data-testid="status" className="col text-center my-auto">
+          <h5>Status</h5>
+          <p className="wrap-content">{jobApp.status}</p>
+        </div>
+      </div>
     );
   });
 
@@ -203,21 +191,8 @@ const Dashboard = () => {
       <div className="row my-5 w-100 mx-auto">
         <div className="col-12">
           <h3 data-testid="title" className="text-center">
-            Job Applications
+            Job Application Status Board
           </h3>
-        </div>
-        <div>
-          <button
-            data-testid="addBtn"
-            className="position-relative btn border addBtn"
-            type="button"
-            onClick={() => {
-              setJobDetailFormState("add");
-              jobAppDetail.openNew();
-            }}
-          >
-            + Add Job
-          </button>
         </div>
       </div>
 
@@ -226,7 +201,7 @@ const Dashboard = () => {
           <input
             data-testid="search"
             type="text"
-            className='rounded'
+            className="rounded"
             placeholder="search job app"
             onChange={handleSearchOnChange}
             value={searchState}
@@ -235,31 +210,58 @@ const Dashboard = () => {
       </div>
 
       <div className="row my-3">
-        <div className="col">
-          <button className='btn btn-secondary btn-md border' data-testid="company-type" onClick={handleCompanyOnClick}>
+        <div className="col-6">
+          <button
+            className="btn btn-secondary btn-md border filter-button"
+            data-testid="company-type"
+            onClick={handleCompanyOnClick}
+          >
             Company
           </button>
-        
-      
-          <button className='btn btn-secondary btn-md border' data-testid="job-title-type" onClick={handleTitleOnClick}>
+
+          <button
+            className="btn btn-secondary btn-md border filter-button"
+            data-testid="job-title-type"
+            onClick={handleTitleOnClick}
+          >
             Job Title
           </button>
-      
-      
-          <button className='btn btn-secondary btn-md border' data-testid="location-type" onClick={handleLocationOnClick}>
+
+          <button
+            className="btn btn-secondary btn-md border filter-button"
+            data-testid="location-type"
+            onClick={handleLocationOnClick}
+          >
             Location
           </button>
-      
-      
-          <button className='btn btn-secondary btn-md border' data-testid="stage-type" onClick={handleStatusOnClick}>
+
+          <button
+            className="btn btn-secondary btn-md border filter-button"
+            data-testid="stage-type"
+            onClick={handleStatusOnClick}
+          >
             Status
           </button>
-        </div>
+          </div>
+          <div className='col-6'>
+            <button
+              data-testid="addBtn"
+              className="position-relative btn border addBtn float-end"
+              type="button"
+              onClick={() => {
+                setJobDetailFormState("add");
+                jobAppDetail.openNew();
+              }}
+            >
+              + Add Job
+            </button>
+          </div>
+        
       </div>
       {/* <div className='row'>
         <div className='col'> */}
-          {jobApps}
-        {/* </div>
+      {jobApps}
+      {/* </div>
       </div> */}
       <Dialog
         maxWidth="md"

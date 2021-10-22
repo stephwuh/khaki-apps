@@ -9,25 +9,19 @@
 
 body{
   background-color: #5F634F;
-  /* height: 100vh; */
+  /* min-height: 100vh; */
 }
 
 
 .background{
   background-color:#FAFAFA;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
-
 .addBtn{
-  left: 90%;
-  top: -30px;
   background-color: #F5BB00;
 }
 
-.job-overview{
-  /* height: 30%; */
-}
 
 .buttons{
   width: 50%;
@@ -47,3 +41,8 @@ body{
   height: 77%;
   padding: 1rem;
 }
+
+.filter-button{
+  background-color: #5F634F;
+}
+
