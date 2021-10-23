@@ -234,7 +234,7 @@ const Dashboard = () => {
       <div className="row my-3 mx-auto">
         <div className="col-6">
           <div className="row">
-            <div className="col-2 px-0">
+            <div className="col-3 col-md-2 px-0">
               <button
                 className="btn btn-secondary w-100 btn-md border filter-button"
                 data-testid="company-type"
@@ -243,7 +243,7 @@ const Dashboard = () => {
                 Company
               </button>
             </div>
-            <div className="col-2 px-0">
+            <div className="col-3 col-md-2 px-0">
               <button
                 className="btn btn-secondary w-100 btn-md border filter-button text-nowrap"
                 data-testid="job-title-type"
@@ -252,7 +252,7 @@ const Dashboard = () => {
                 Job Title
               </button>
             </div>
-            <div className="col-2 px-0">
+            <div className="col-3 col-md-2 px-0">
               <button
                 className="btn btn-secondary btn-md border w-100 filter-button"
                 data-testid="location-type"
@@ -261,7 +261,7 @@ const Dashboard = () => {
                 Location
               </button>
             </div>
-            <div className="col-2 px-0">
+            <div className="col-3 col-md-2 px-0">
               <button
                 className="btn btn-secondary btn-md border w-100 filter-button"
                 data-testid="stage-type"
@@ -274,7 +274,7 @@ const Dashboard = () => {
         </div>
         <div className="col-6 gx-0">
           <div className="row justify-content-end">
-            <div className="col-3">
+            <div className="col-md-3 col-4">
               <button
                 data-testid="addBtn"
                 className="btn border w-100 addBtn text-nowrap"
