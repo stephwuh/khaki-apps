@@ -104,8 +104,8 @@ const JobAppDetail = (props) => {
   return (
     <div className="container">
       <form>
-        <div className='row mb-3'>
-          <div className='col-4'>
+        <div className="row mb-3">
+          <div className="col-4">
             <h5>Company</h5>
             <input
               data-testid="company"
@@ -115,7 +115,7 @@ const JobAppDetail = (props) => {
               onChange={handleCompanyOnChange}
             />
           </div>
-          <div className='col-4'>
+          <div className="col-4">
             <h5>Job Title</h5>
             <input
               data-testid="jobTitle"
@@ -125,7 +125,7 @@ const JobAppDetail = (props) => {
               onChange={handleJobTitleOnChange}
             />
           </div>
-          <div className='col-4'>
+          <div className="col-4">
             <h5>Expected Salary</h5>
             <input
               data-testid="salary"
@@ -136,8 +136,8 @@ const JobAppDetail = (props) => {
             />
           </div>
         </div>
-        <div className='row my-3'>
-          <div className='col-6'>
+        <div className="row my-3">
+          <div className="col-6">
             <h5>Location</h5>
             <input
               data-testid="location"
@@ -147,7 +147,7 @@ const JobAppDetail = (props) => {
               onChange={handleLocationOnChange}
             />
           </div>
-          <div className='col-6'>
+          <div className="col-6">
             <h5>Source Webpage</h5>
             <input
               data-testid="webpage"
@@ -158,8 +158,8 @@ const JobAppDetail = (props) => {
             />
           </div>
         </div>
-        <div className='row my-3'>
-          <div className='col-4'>
+        <div className="row my-3">
+          <div className="col-4">
             <h5>Contact Name</h5>
             <input
               data-testid="contactName"
@@ -169,7 +169,7 @@ const JobAppDetail = (props) => {
               onChange={handleContactNameOnChange}
             />
           </div>
-          <div className='col-4'>
+          <div className="col-4">
             <h5>Contact Number</h5>
             <input
               data-testid="contactNumber"
@@ -179,7 +179,7 @@ const JobAppDetail = (props) => {
               onChange={handleContactNumberOnChange}
             />
           </div>
-          <div className='col-4'>
+          <div className="col-4">
             <h5>Application Status</h5>
             <input
               data-testid="status"
@@ -190,8 +190,8 @@ const JobAppDetail = (props) => {
             />
           </div>
         </div>
-        <div className='row my-3'>
-          <div className='col-6'>
+        <div className="row ">
+          <div className="col-6">
             <h5>Job Description</h5>
             <textarea
               data-testid="description"
@@ -200,7 +200,7 @@ const JobAppDetail = (props) => {
               onChange={handleDescriptionOnChange}
             />
           </div>
-          <div className='col-6'>
+          <div className="col-6">
             <h5>Notes</h5>
             <textarea
               data-testid="notes"
@@ -210,43 +210,46 @@ const JobAppDetail = (props) => {
             />
           </div>
         </div>
-        <div className='row justify-content-end gx-0'>
-        <div className='col-1 px-0 mx-1'>
-          <button
-            data-testid="editBtn"
-            className="btn border w-100   addBtn"
-            onClick={() => {
-              setEditState(!editState);
-            }}
-            type="button"
-          >
-            Edit
-          </button>
+        <div className="row gx-0">
+          <div className="col-1">
+            {props.jobDetailFormState === "update" && (
+              <button
+                data-testid="deleteBtn"
+                className="btn border w-100 btn-danger dlt-btn"
+                disabled={!editState}
+                onClick={handleDeleteOnClick}
+              >
+                Delete
+              </button>
+            )}
           </div>
-          
-          <div className='col-1 px-0 mx-1'>
-          <button
-            data-testid="submitBtn"
-            className="btn border w-100 addBtn"
-            onClick={handleAppSubmit}
-            type="submit"
-            disabled={!editState}
-          >
-            Submit
-          </button>
-          </div>
-          
-          <div className='col-1 px-0 mx-1'>
-          {props.jobDetailFormState === "update" && (
-            <button
-              data-testid="deleteBtn"
-              className="btn border w-100 addBtn"
-              disabled={!editState}
-              onClick={handleDeleteOnClick}
-            >
-              Delete
-            </button>
-          )}
+          <div className="col">
+            <div className='row justify-content-end'>
+            <div className="col-1 px-0">
+              <button
+                data-testid="editBtn"
+                className="btn border w-100   addBtn"
+                onClick={() => {
+                  setEditState(!editState);
+                }}
+                type="button"
+              >
+                Edit
+              </button>
+            </div>
+
+            <div className="col-1 px-0 mx-2">
+              <button
+                data-testid="submitBtn"
+                className="btn border w-100 addBtn"
+                onClick={handleAppSubmit}
+                type="submit"
+                disabled={!editState}
+              >
+                Submit
+              </button>
+            </div>
+            </div>
           </div>
         </div>
       </form>

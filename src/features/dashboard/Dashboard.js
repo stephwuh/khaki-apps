@@ -43,7 +43,7 @@ const Dashboard = () => {
     return (
       <div
         data-testid="job-app"
-        className="row row-cols-5 my-3 gx-0 border rounded bg-white job-overview"
+        className="row row-cols-lg-5 row-cols-3 my-3 gx-0 border rounded bg-white job-overview"
         key={index}
         onClick={() => {
           setJobDetailFormState("update");
@@ -55,25 +55,33 @@ const Dashboard = () => {
           className="col text-center my-auto py-5"
         >
           <h5>Company</h5>
-          <p 
-          data-testid="company-name"
-          className="wrap-content">{jobApp.company}</p>
+          <p data-testid="company-name" className="wrap-content">
+            {jobApp.company}
+          </p>
         </div>
         <div className="col text-center my-auto">
           <h5>Job Title</h5>
-          <p data-testid="job-title" className="wrap-content">{jobApp.jobTitle}</p>
+          <p data-testid="job-title" className="wrap-content">
+            {jobApp.jobTitle}
+          </p>
         </div>
-        <div  className="col text-center my-auto">
+        <div className="col text-center my-auto">
           <h5>Location</h5>
-          <p data-testid="location" className="wrap-content">{jobApp.location}</p>
+          <p data-testid="location" className="wrap-content">
+            {jobApp.location}
+          </p>
         </div>
-        <div  className="col text-center my-auto">
+        <div className="col text-center my-auto">
           <h5>Salary</h5>
-          <p data-testid="salary" className="wrap-content">{jobApp.salary}</p>
+          <p data-testid="salary" className="wrap-content">
+            {jobApp.salary}
+          </p>
         </div>
-        <div  className="col text-center my-auto">
+        <div className="col text-center my-auto">
           <h5>Status</h5>
-          <p data-testid="status" className="wrap-content">{jobApp.status}</p>
+          <p data-testid="status" className="wrap-content">
+            {jobApp.status}
+          </p>
         </div>
       </div>
     );
@@ -85,20 +93,34 @@ const Dashboard = () => {
     let searchValue = e.target.value.toLowerCase();
 
     let result = jobAppState.filter((data) => {
-      return (
-        data.company.search(searchValue) !== -1 ||
-        data.jobTitle.search(searchValue) !== -1 ||
-        data.location.search(searchValue) !== -1 ||
-        data.salary.search(searchValue) !== -1 ||
-        data.status.search(searchValue) !== -1 ||
-        data.webpage.search(searchValue) !== -1 ||
-        data.contactName.search(searchValue) !== -1 ||
-        data.contactNumber.search(searchValue) !== -1 ||
-        data.description.search(searchValue) !== -1 ||
-        data.notes.search(searchValue) !== -1
-      );
+
+        const company = !data.company ? "" : data.company;
+        const jobTitle = !data.jobTitle ? "" : data.jobTitle;
+        const location = !data.location ? "" : data.location;
+        const salary = !data.salary ? "" : data.salary;
+        const status = !data.status ? "" : data.status;
+        const webpage = !data.webpage ? "" : data.webpage;
+        const contactName = !data.contactName ? "" : data.contactName;
+        const contactNumber = !data.contactNumber ? "" : data.contactNumber;
+        const description = !data.description ? "" : data.description;
+        const notes = !data.notes ? "" : data.notes;
+
+        return (
+          company.toLowerCase().search(searchValue) !== -1 ||
+          jobTitle.toLowerCase().search(searchValue) !== -1 ||
+          location.toLowerCase().search(searchValue) !== -1 ||
+          salary.toLowerCase().search(searchValue) !== -1 ||
+          status.toLowerCase().search(searchValue) !== -1 ||
+          webpage.toLowerCase().search(searchValue) !== -1 ||
+          contactName.toLowerCase().search(searchValue) !== -1 ||
+          contactNumber.toLowerCase().search(searchValue) !== -1 ||
+          description.toLowerCase().search(searchValue) !== -1 ||
+          notes.toLowerCase().search(searchValue) !== -1
+        );
+      
     });
 
+    console.log(result)
     setFilteredJobAppState(result);
   };
 
@@ -106,8 +128,11 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const companyA = a.company.toLowerCase();
-      const companyB = b.company.toLowerCase();
+
+        const companyA = a.company;
+        const companyB = b.company;
+
+      
 
       let comparison = 0;
 
@@ -129,8 +154,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const jobTitleA = a.jobTitle.toLowerCase();
-      const jobTitleB = b.jobTitle.toLowerCase();
+      const jobTitleA = a.jobTitle;
+      const jobTitleB = b.jobTitle;
 
       let comparison = 0;
 
@@ -150,8 +175,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const locationA = a.location.toLowerCase();
-      const locationB = b.location.toLowerCase();
+      const locationA = a.location;
+      const locationB = b.location;
 
       let comparison = 0;
 
@@ -171,8 +196,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const statusA = a.status.toLowerCase();
-      const statusB = b.status.toLowerCase();
+      const statusA = a.status;
+      const statusB = b.status;
 
       let comparison = 0;
 
@@ -211,54 +236,64 @@ const Dashboard = () => {
         </form>
       </div>
 
-      <div className="row my-3">
+      <div className="row my-3 mx-auto">
         <div className="col-6">
-          <button
-            className="btn btn-secondary btn-md border filter-button"
-            data-testid="company-type"
-            onClick={handleCompanyOnClick}
-          >
-            Company
-          </button>
-
-          <button
-            className="btn btn-secondary btn-md border filter-button"
-            data-testid="job-title-type"
-            onClick={handleTitleOnClick}
-          >
-            Job Title
-          </button>
-
-          <button
-            className="btn btn-secondary btn-md border filter-button"
-            data-testid="location-type"
-            onClick={handleLocationOnClick}
-          >
-            Location
-          </button>
-
-          <button
-            className="btn btn-secondary btn-md border filter-button"
-            data-testid="stage-type"
-            onClick={handleStatusOnClick}
-          >
-            Status
-          </button>
+          <div className="row">
+            <div className="col-2 px-0">
+              <button
+                className="btn btn-secondary w-100 btn-md border filter-button"
+                data-testid="company-type"
+                onClick={handleCompanyOnClick}
+              >
+                Company
+              </button>
+            </div>
+            <div className="col-2 px-0">
+              <button
+                className="btn btn-secondary w-100 btn-md border filter-button text-nowrap"
+                data-testid="job-title-type"
+                onClick={handleTitleOnClick}
+              >
+                Job Title
+              </button>
+            </div>
+            <div className="col-2 px-0">
+              <button
+                className="btn btn-secondary btn-md border w-100 filter-button"
+                data-testid="location-type"
+                onClick={handleLocationOnClick}
+              >
+                Location
+              </button>
+            </div>
+            <div className="col-2 px-0">
+              <button
+                className="btn btn-secondary btn-md border w-100 filter-button"
+                data-testid="stage-type"
+                onClick={handleStatusOnClick}
+              >
+                Status
+              </button>
+            </div>
           </div>
-          <div className='col-6'>
-            <button
-              data-testid="addBtn"
-              className="position-relative btn border addBtn float-end"
-              type="button"
-              onClick={() => {
-                setJobDetailFormState("add");
-                jobAppDetail.openNew();
-              }}
-            >
-              + Add Job
-            </button>
+        </div>
+        <div className="col-6 gx-0">
+          <div className="row justify-content-end">
+            <div className="col-3">
+              <button
+                data-testid="addBtn"
+                className="btn border w-100 addBtn text-nowrap"
+                type="button"
+                onClick={() => {
+                  setJobDetailFormState("add");
+                  jobAppDetail.openNew();
+                }}
+              >
+              Add Job
+              </button>
+            </div>
           </div>
-        
+        </div>
       </div>
       {/* <div className='row'>
         <div className='col'> */}

@@ -20,8 +20,12 @@ body{
 
 .addBtn{
   background-color: #F5BB00;
+  font-size: 1vw;
 }
 
+.dltBtn{
+  font-size: 1vw
+}
 
 .buttons{
   width: 50%;
@@ -44,5 +48,6 @@ body{
 
 .filter-button{
   background-color: #5F634F;
+  font-size: 1vw;
 }
 
