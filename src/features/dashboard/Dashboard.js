@@ -120,7 +120,6 @@ const Dashboard = () => {
       
     });
 
-    console.log(result)
     setFilteredJobAppState(result);
   };
 
@@ -132,8 +131,6 @@ const Dashboard = () => {
         const companyA = a.company;
         const companyB = b.company;
 
-      
-
       let comparison = 0;
 
       if (companyA > companyB) {
@@ -144,8 +141,6 @@ const Dashboard = () => {
 
       return comparison;
     });
-
-    // sortFunction.sortApp(jobApps, company)
 
     setFilteredJobAppState(jobApps);
   };
