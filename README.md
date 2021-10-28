@@ -26,4 +26,8 @@ functions.
 - Create, save, delete job applications.
 - Get an overview of all job applications from the job application board. 
 - Filter saved job applications from job application board with filter buttons or text inputed by the user.
-
+- 
+<span>
+  <img src="https://user-images.githubusercontent.com/56822167/139295289-a4f8fc92-cb66-4599-a134-15f450b12cff.PNG" width="500"/>
+  <img src="https://user-images.githubusercontent.com/56822167/139295297-7f176ef9-bca1-4aa0-9c37-eb0d09a238ee.PNG" width="500"/>
+</span>
