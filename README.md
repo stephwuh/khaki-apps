@@ -27,6 +27,7 @@ functions.
 - Get an overview of all job applications from the job application board. 
 - Filter saved job applications from job application board with filter buttons or text inputed by the user.
 
+<<<<<<< HEAD
 
 ## Tech Stack
 
@@ -34,3 +35,9 @@ functions.
 
 **Server:** Json Server
 
+=======
+<span>
+  <img src="https://user-images.githubusercontent.com/56822167/139295289-a4f8fc92-cb66-4599-a134-15f450b12cff.PNG" width="500"/>
+  <img src="https://user-images.githubusercontent.com/56822167/139295297-7f176ef9-bca1-4aa0-9c37-eb0d09a238ee.PNG" width="500"/>
+</span>
+>>>>>>> 6a9872f7bb9392d0ba7691a52d1b020265120059
