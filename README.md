@@ -27,3 +27,10 @@ functions.
 - Get an overview of all job applications from the job application board. 
 - Filter saved job applications from job application board with filter buttons or text inputed by the user.
 
+
+## Tech Stack
+
+**Client:** React, Bootstrap, Jest, React Testing Library
+
+**Server:** Json Server
+
