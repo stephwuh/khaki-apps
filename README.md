@@ -1,7 +1,7 @@
 
 # Job Application Tracker
 
-This frontend only React web application allows users to track their job applications.
+This React web app allows users to track their job applications.
 
 I worked on this seemingly simple project to practice test driven development and unit testing with Jest 
 and RTL (React Testing Library), as well as practice using Bootstrap to easily apply styling and mobile responsiveness.
@@ -30,7 +30,7 @@ functions.
 
 ## Tech Stack
 
-**Client:** React, Bootstrap, Jest, React Testing Library
+**Client:** React, Matirial UI, Bootstrap, Jest, and React Testing Library
 
 **Server:** Json Server
 
