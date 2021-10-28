@@ -11,8 +11,8 @@ Regarding test driven development, I made sure to ahere to the following process
 using the arrange-act-assert pattern, (2) write production code to make the unit test pass, (3) refactor to eliminate duplicate code, etc. (4) repeat steps 1~3.
 
 Each unit test tests for a specific behavior, whether it's making sure the input 
-text box renders as planned or the filter function works properly. In order to drown 
-out the noise that might affect the outcome of the test, I isolate each test so they are 
+text box renders as planned or testing to see if the filter function works properly. In order to drown 
+out noise that might affect the outcome of the test, I isolate each test so they are 
 not dependent on each other and control for external dependencies using mock data and 
 functions. 
 
@@ -26,6 +26,7 @@ functions.
 - Create, save, delete job applications.
 - Get an overview of all job applications from the job application board. 
 - Filter saved job applications from job application board with filter buttons or text inputed by the user.
+- Mobile responsive.
 
 
 ## Tech Stack
