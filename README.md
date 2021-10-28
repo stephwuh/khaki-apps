@@ -36,6 +36,6 @@ functions.
 
 <span>
   <img src="https://user-images.githubusercontent.com/56822167/139295289-a4f8fc92-cb66-4599-a134-15f450b12cff.PNG" width="350"/>
-  <img src="https://user-images.githubusercontent.com/56822167/139295297-7f176ef9-bca1-4aa0-9c37-eb0d09a238ee.PNG" width="350"/>
+  <img src="https://user-images.githubusercontent.com/56822167/139340499-52dc8eac-8c21-42f9-9dcb-db5e7a44f77f.PNG" width="350"/>
 </span>
 
