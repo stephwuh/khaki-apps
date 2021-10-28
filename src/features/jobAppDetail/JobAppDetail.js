@@ -203,7 +203,6 @@ const JobAppDetail = (props) => {
             <h5 className='text-nowrap'>Job Description</h5>
             <textarea
               data-testid="description"
-              className='text-nowrap'
               value={descriptionState}
               disabled={!editState}
               onChange={handleDescriptionOnChange}
@@ -213,7 +212,6 @@ const JobAppDetail = (props) => {
             <h5 className='text-nowrap'>Notes</h5>
             <textarea
               data-testid="notes"
-              className='text-nowrap'
               value={notesState}
               disabled={!editState}
               onChange={handleNotesOnChange}

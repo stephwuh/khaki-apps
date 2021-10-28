@@ -130,6 +130,7 @@ it("should show location of job applications", () => {
 });
 
 it("should show salary of job applications", () => {
+  
   const salaries = getAllByTestId(container, "salary");
 
   expect(getNodeText(salaries[0])).toBe("test salary 1");
@@ -233,9 +234,3 @@ describe('filter buttons', () => {
   })
 })
 
-
-// expect(getByTestId(container, "date-type")).toBeTruthy();
-// expect(getByTestId(container, "company-type")).toBeTruthy();
-// expect(getByTestId(container, "job-title-type")).toBeTruthy();
-// expect(getByTestId(container, "location-type")).toBeTruthy();
-// expect(getByTestId(container, "stage-type")).toBeTruthy();

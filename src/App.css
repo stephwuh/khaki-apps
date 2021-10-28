@@ -8,39 +8,6 @@ html {
   font-size: 0.9rem;
 }
 
-@media only screen and (max-width: 768px) {
-  html {
-    font-size: 0.75rem;
-  }
-}
-
-@media only screen and (max-width: 1399px) {
-  .filter-button, .addBtn, .dltBtn {
-    font-size: 0.8rem;
-  }
-}
-
-@media only screen and (max-width: 1199px) {
-  .filter-button, .addBtn, .dltBtn {
-    font-size: 0.7rem;
-  }
-}
-
-
-
-@media only screen and (min-width: 575px) {
-  .section {
-    margin-bottom: 15px;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  .item {
-    margin-bottom: 10px;
-  }
-}
-
-
 
 body{
   background-color: #5F634F;
@@ -75,7 +42,37 @@ body{
   background-color: #5F634F;
 }
 
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
 
+@media only screen and (max-width: 1399px) {
+  .filter-button, .addBtn, .dltBtn {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .filter-button, .addBtn, .dltBtn {
+    font-size: 0.7rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 575px) {
+  .section {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .item {
+    margin-bottom: 10px;
+  }
+}
 
 /* material UI dialog box css setting override */
 .MuiDialog-paper{

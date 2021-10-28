@@ -1,47 +1,47 @@
 {
   "job-app": [
     {
-      "company": "twitter",
-      "jobTitle": "test job title 2",
-      "location": "test location 2",
-      "salary": "test salary 2",
-      "status": "test status 2",
-      "webpage": "test webpage 2",
-      "contactName": "test contact name 2",
-      "contactNumber": "test contact number 2",
-      "description": "test description 2",
-      "notes": "test notes 2",
+      "company": "Toptal",
+      "jobTitle": "React Developer",
+      "location": "Manassas, VA",
+      "salary": "$70,000",
+      "status": "Application Submitted",
+      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2776830907&f_WT=2&geoId=103644278",
+      "description": "Requirements\n3+ years of experience in software development\nStrong proficiency in JavaScript, including DOM manipulation and the JavaScript object model\nThorough understanding of React.js and its core principles\nExperience with popular React.js workflows (such as Flux or Redux)\nFamiliarity with newer specifications of EcmaScript\nExperience with data structure libraries (e.g., Immutable.js)\nKnowledge of isomorphic React is a plus\nFamiliarity with RESTful APIs\nKnowledge of modern authorization mechanisms, such as JSON Web Token\nFamiliarity with modern front-end build pipelines and tools\nExperience with common front-end development tools such as Babel, Webpack, NPM, etc.\nAbility to understand business requirements and translate them into technical requirements\nA knack for benchmarking and optimization\nExperience with system architecture or leading a software team is a strong advantage\nFull-time availability is a strong advantage",
+      "notes": "Requirements\n3+ years of experience in software development\nStrong proficiency in JavaScript, including DOM manipulation and the JavaScript object model\nThorough understanding of React.js and its core principles\nExperience with popular React.js workflows (such as Flux or Redux)\nFamiliarity with newer specifications of EcmaScript\nExperience with data structure libraries (e.g., Immutable.js)\nKnowledge of isomorphic React is a plus\nFamiliarity with RESTful APIs\nKnowledge of modern authorization mechanisms, such as JSON Web Token\nFamiliarity with modern front-end build pipelines and tools\nExperience with common front-end development tools such as Babel, Webpack, NPM, etc.\nAbility to understand business requirements and translate them into technical requirements\nA knack for benchmarking and optimization\nExperience with system architecture or leading a software team is a strong advantage\nFull-time availability is a strong advantage",
+      "id": 1
+    },
+    {
+      "company": "Coinbase Global Inc ",
+      "jobTitle": "Software Engineer",
+      "location": "San Francisco, CA",
+      "salary": "$29~$37/hr",
+      "status": "1st  Round Interview",
+      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2777182340&f_WT=2&geoId=103644278",
+      "contactName": "Bob Metivier",
       "id": 2
     },
     {
-      "company": "morgan stanley",
-      "jobTitle": "software engineer",
-      "location": "New York",
-      "salary": "70000",
-      "status": "Application Submitted",
-      "webpage": "morganstanley.com",
-      "contactName": "John",
-      "contactNumber": "",
-      "description": "- Free, fully furnished corporate housing during training (Office Address - 104 S 20th St, Philadelphia, PA 19103)\n- Free training materials and equipment for use during training and on projects.\n- Travel to and from training and clients’ project sites.\n- 2 weeks of hotel accommodations on each project.\n- Full W2 benefits packages including medical, dental, and vision insurance.\n- You will be paid during the Training of 6-8 weeks of the training period\n \nPROCESS: WHAT WILL I EXPERIENCE?\nOne of Rave Bizz Company’s business focuses is the success of each and every single one of our consultants.  We have honed our processes to provide an exceptional level of support and development.\n \nStreamlined 3-step interviewing process\n1. Skype Technical Interview- 60 minutes of an interview conducted via Skype audio call; will include coding questions and live coding from an SME.\n2. Second Round of Interview- 30 minutes of Skype video call with the Instructor/Trainer.\n3. Final Round of Interview- 30 minutes of a telephonic call with the founder/president of the company.\n\nOur Career Advancement Training (CAT) is interactive, innovative, and led by field-experienced trainers in our training facilities.\nDid we mention we will be paying you for 40 hours/week for training?!\n- Each training day consists of 4-6 hours of hands-on application development followed by assignments to complete with training group team members.\n- Each trainee will receive coaching from experienced Rave Bizz Company technical experts who also provide 24/7 technical support during training and while on the project.\n- Each trainee will be assigned a dedicated Consultant Manager, who mentors and furthers each consultant’s professional development.\n- Weekly “How to Be a consultant” seminars focus on the non-technical aspects of the job.",
-      "notes": "- Free, fully furnished corporate housing during training (Office Address - 104 S 20th St, Philadelphia, PA 19103)\n- Free training materials and equipment for use during training and on projects.\n- Travel to and from training and clients’ project sites.\n- 2 weeks of hotel accommodations on each project.\n- Full W2 benefits packages including medical, dental, and vision insurance.\n- You will be paid during the Training of 6-8 weeks of the training period\n \nPROCESS: WHAT WILL I EXPERIENCE?\nOne of Rave Bizz Company’s business focuses is the success of each and every single one of our consultants.  We have honed our processes to provide an exceptional level of support and development.\n \nStreamlined 3-step interviewing process\n1. Skype Technical Interview- 60 minutes of an interview conducted via Skype audio call; will include coding questions and live coding from an SME.\n2. Second Round of Interview- 30 minutes of Skype video call with the Instructor/Trainer.\n3. Final Round of Interview- 30 minutes of a telephonic call with the founder/president of the company.\n\nOur Career Advancement Training (CAT) is interactive, innovative, and led by field-experienced trainers in our training facilities.\nDid we mention we will be paying you for 40 hours/week for training?!\n- Each training day consists of 4-6 hours of hands-on application development followed by assignments to complete with training group team members.\n- Each trainee will receive coaching from experienced Rave Bizz Company technical experts who also provide 24/7 technical support during training and while on the project.\n- Each trainee will be assigned a dedicated Consultant Manager, who mentors and furthers each consultant’s professional development.\n- Weekly “How to Be a consultant” seminars focus on the non-technical aspects of the job.",
-      "id": 6
+      "company": "Splunk",
+      "jobTitle": "Front End Developer",
+      "location": "Remote",
+      "salary": "$95,000",
+      "status": "Final Interview",
+      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2753275955&f_WT=2&geoId=103644278&keywords=entry%20level%20web%20developer&location=United%20States",
+      "description": "Responsibilities\n\nAct as the front end development lead, independently work close with members of the demo environment team to deliver a streamlined user experience\nWrite cutting-edge frontend code using JS/HTML/CSS within client-side MVC frameworks\nWork with demonstration program manager to offer guidance and technical feasibility of internal customer requests\n\nRequirements\n\nExperience with JavaScript and ReactJS\nExperience working and scripting within multiple operating systems, particularly Linux and Windows\nExperience with cyber security\nExcellent problem-solving skills with great attention to detail\nPreferred\nExperience developing software for enterprise\nExperience with systems interoperability, integration and networking\nKnowledge of data structures, storage systems, cloud infrastructure, front-end frameworks, and other technical tools\n\nEducation\n\nBachelor of Science degree in Computer Science or related discipline or equivalent work experience,",
+      "id": 3
     },
     {
-      "company": "Tackle AI",
-      "jobTitle": "Frontend Developer",
-      "location": "Chicago",
-      "salary": "",
-      "status": "Application Submitted",
-      "webpage": "",
-      "contactName": "Randi Jo Chester",
-      "contactNumber": "",
-      "description": "Responsibilities Designing, developing, and testing UI for mobile and web applications Build reusable code and libraries for future use Accurately translate user and business needs into functional frontend code Qualifications Bachelor's degree or equivalent in Computer Science 2+ years' experience in frontend development Familiarity using Scrum/Agile development methodologies Experience building object oriented web applications in JavaScript, HTML5, and CSS3",
-      "notes": "",
-      "id": 8
-    },
-    {
-      "company": "Bank of America",
-      "id": 9
+      "company": "HubSync",
+      "jobTitle": "Full Stack Engineer",
+      "location": "Alexandria, VA",
+      "salary": "$100,000",
+      "status": "2nd Round Interview",
+      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2776007927&f_WT=2&geoId=103644278&keywords=entry%20level%20web%20developer&location=United%20States",
+      "contactName": "Paul Madarasz",
+      "description": "Responsibilities \n\nWork with development teams and product managers to conceptualize software solutions \nDesign and implement appealing user interfaces \nDesign and implement REST and WebSocket APIs \nDesign and manage databases \nWrite automated tests and perform manual testing \nTroubleshoot and debug issues \nWrite technical documentation \n \n\nSkills and Qualifications  \n\n5+ years experience developing web applications using React \n5+ years experience designing and developing REST APIs using Node.js and Express.js \nExperience with data modeling and both SQL and NoSQL database systems \nExperience working with Git and GitHub \nOutstanding communication skills \nDegree in Computer Science or equivalent work experience \nDocker \nAWS \nOpenID Connect \nBash \nCompetencies & KSA \n\nExcellent Communications Proficiency \nDeep functional experience in solution development engagements \nGreat team player thinking with the ability to work in small, high functioning teams ",
+      "notes": "Very close to where I live in Herndon VA.",
+      "id": 4
     }
   ]
 }

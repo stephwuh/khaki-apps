@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Dialog, DialogContent, makeStyles } from "@material-ui/core";
+import { Dialog, DialogContent } from "@material-ui/core";
 import apiClient from "../../services/apiClient";
 import jobAppDetail from "../../services/jobAppDetail";
-import dashboard from "./dashboard.module.css";
 import JobAppDetail from "../jobAppDetail/JobAppDetail";
-import sortFunction from "../../services/sort";
 import "../.././App.css";
 
 const Dashboard = () => {

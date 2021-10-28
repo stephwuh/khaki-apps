@@ -1,5 +1,5 @@
 import React from 'react';
-import {getByTestId, render, fireEvent, cleanup, unmount, queryByTestId} from '@testing-library/react';
+import {getByTestId, render, cleanup, queryByTestId} from '@testing-library/react';
 import JobAppDetail from './JobAppDetail.js';
 import apiClient from '../../services/apiClient.js';
 
