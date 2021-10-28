@@ -4,7 +4,7 @@
 This React web app allows users to track their job applications.
 
 I worked on this seemingly simple project to practice test driven development and unit testing with Jest 
-and RTL (React Testing Library), as well as practice using Bootstrap to easily apply styling and mobile responsiveness.
+and React Testing Library, as well as practice using Bootstrap to easily apply styling and mobile responsiveness.
 
 Regarding test driven development, I made sure to ahere to the following process: 
 (1) write failing unit tests of test cases based on software requirements
