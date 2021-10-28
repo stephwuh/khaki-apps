@@ -39,85 +39,35 @@ const Dashboard = () => {
     return () => subscription.unsubscribe();
   }, []);
 
-  let jobApps = filteredJobAppState.map((jobApp, index) => {
-    return (
-      <div
-        data-testid="job-app"
-        className="row row-cols-lg-5 row-cols-3 my-3 gx-0 border rounded bg-white job-overview"
-        key={index}
-        onClick={() => {
-          setJobDetailFormState("update");
-          jobAppDetail.open(jobApp);
-        }}
-      >
-        <div
-          // data-testid="company-name"
-          className="col text-center my-auto py-5"
-        >
-          <h5>Company</h5>
-          <p data-testid="company-name" className="wrap-content">
-            {jobApp.company}
-          </p>
-        </div>
-        <div className="col text-center my-auto">
-          <h5>Job Title</h5>
-          <p data-testid="job-title" className="wrap-content">
-            {jobApp.jobTitle}
-          </p>
-        </div>
-        <div className="col text-center my-auto">
-          <h5>Location</h5>
-          <p data-testid="location" className="wrap-content">
-            {jobApp.location}
-          </p>
-        </div>
-        <div className="col text-center my-auto">
-          <h5>Salary</h5>
-          <p data-testid="salary" className="wrap-content">
-            {jobApp.salary}
-          </p>
-        </div>
-        <div className="col text-center my-auto">
-          <h5>Status</h5>
-          <p data-testid="status" className="wrap-content">
-            {jobApp.status}
-          </p>
-        </div>
-      </div>
-    );
-  });
-
   const handleSearchOnChange = (e) => {
     setSearchState(e.target.value);
 
     let searchValue = e.target.value.toLowerCase();
 
     let result = jobAppState.filter((data) => {
+      const company = !data.company ? "" : data.company;
+      const jobTitle = !data.jobTitle ? "" : data.jobTitle;
+      const location = !data.location ? "" : data.location;
+      const salary = !data.salary ? "" : data.salary;
+      const status = !data.status ? "" : data.status;
+      const webpage = !data.webpage ? "" : data.webpage;
+      const contactName = !data.contactName ? "" : data.contactName;
+      const contactNumber = !data.contactNumber ? "" : data.contactNumber;
+      const description = !data.description ? "" : data.description;
+      const notes = !data.notes ? "" : data.notes;
 
-        const company = !data.company ? "" : data.company;
-        const jobTitle = !data.jobTitle ? "" : data.jobTitle;
-        const location = !data.location ? "" : data.location;
-        const salary = !data.salary ? "" : data.salary;
-        const status = !data.status ? "" : data.status;
-        const webpage = !data.webpage ? "" : data.webpage;
-        const contactName = !data.contactName ? "" : data.contactName;
-        const contactNumber = !data.contactNumber ? "" : data.contactNumber;
-        const description = !data.description ? "" : data.description;
-        const notes = !data.notes ? "" : data.notes;
-
-        return (
-          company.toLowerCase().search(searchValue) !== -1 ||
-          jobTitle.toLowerCase().search(searchValue) !== -1 ||
-          location.toLowerCase().search(searchValue) !== -1 ||
-          salary.toLowerCase().search(searchValue) !== -1 ||
-          status.toLowerCase().search(searchValue) !== -1 ||
-          webpage.toLowerCase().search(searchValue) !== -1 ||
-          contactName.toLowerCase().search(searchValue) !== -1 ||
-          contactNumber.toLowerCase().search(searchValue) !== -1 ||
-          description.toLowerCase().search(searchValue) !== -1 ||
-          notes.toLowerCase().search(searchValue) !== -1
-        );
-      
+      return (
+        company.toLowerCase().search(searchValue) !== -1 ||
+        jobTitle.toLowerCase().search(searchValue) !== -1 ||
+        location.toLowerCase().search(searchValue) !== -1 ||
+        salary.toLowerCase().search(searchValue) !== -1 ||
+        status.toLowerCase().search(searchValue) !== -1 ||
+        webpage.toLowerCase().search(searchValue) !== -1 ||
+        contactName.toLowerCase().search(searchValue) !== -1 ||
+        contactNumber.toLowerCase().search(searchValue) !== -1 ||
+        description.toLowerCase().search(searchValue) !== -1 ||
+        notes.toLowerCase().search(searchValue) !== -1
+      );
     });
 
     setFilteredJobAppState(result);
@@ -127,9 +77,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-
-        const companyA = a.company;
-        const companyB = b.company;
+      const companyA = a.company;
+      const companyB = b.company;
 
       let comparison = 0;
 
@@ -208,6 +157,54 @@ const Dashboard = () => {
     setFilteredJobAppState(jobApps);
   };
 
+  let jobApps = filteredJobAppState.map((jobApp, index) => {
+    return (
+      <div
+        data-testid="job-app"
+        className="row row-cols-lg-5 row-cols-md-3 row-cols-2 my-3 gx-0 border rounded bg-white job-overview"
+        key={index}
+        onClick={() => {
+          setJobDetailFormState("update");
+          jobAppDetail.open(jobApp);
+        }}
+      >
+        <div
+          // data-testid="company-name"
+          className="col text-center my-auto py-5"
+        >
+          <h5>Company</h5>
+          <p data-testid="company-name" className="wrap-content">
+            {jobApp.company}
+          </p>
+        </div>
+        <div className="col text-center my-auto">
+          <h5>Job Title</h5>
+          <p data-testid="job-title" className="wrap-content">
+            {jobApp.jobTitle}
+          </p>
+        </div>
+        <div className="col text-center my-auto">
+          <h5>Location</h5>
+          <p data-testid="location" className="wrap-content">
+            {jobApp.location}
+          </p>
+        </div>
+        <div className="col text-center my-auto">
+          <h5>Salary</h5>
+          <p data-testid="salary" className="wrap-content">
+            {jobApp.salary}
+          </p>
+        </div>
+        <div className="col text-center my-auto py-5">
+          <h5>Status</h5>
+          <p data-testid="status" className="wrap-content">
+            {jobApp.status}
+          </p>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <>
       <div className="row my-5 w-100 mx-auto">
@@ -233,8 +230,66 @@ const Dashboard = () => {
 
       <div className="row my-3 mx-auto">
         <div className="col-6">
-          <div className="row">
-            <div className="col-3 col-md-2 px-0">
+          <div className="row d-md-block d-lg-none ">
+            <div className="col-4 col-sm-3 gx-0">
+              <div className="dropdown">
+                <button
+                  className="btn btn-secondary dropdown-toggle filter-button w-100"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Filter
+                </button>
+
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={handleCompanyOnClick}
+                    >
+                      Company
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={handleTitleOnClick}
+                    >
+                      Job Title
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={handleLocationOnClick}
+                    >
+                      Location
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={handleStatusOnClick}
+                    >
+                      Status
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="row d-none d-lg-flex">
+            <div className="col-3 col-md-2 px-0 ">
               <button
                 className="btn btn-secondary w-100 btn-md border filter-button"
                 data-testid="company-type"
@@ -274,7 +329,7 @@ const Dashboard = () => {
         </div>
         <div className="col-6 gx-0">
           <div className="row justify-content-end">
-            <div className="col-md-3 col-4">
+            <div className=" col-5 col-sm-3 col-lg-2">
               <button
                 data-testid="addBtn"
                 className="btn border w-100 addBtn text-nowrap"
@@ -284,7 +339,7 @@ const Dashboard = () => {
                   jobAppDetail.openNew();
                 }}
               >
-              Add Job
+                Add
               </button>
             </div>
           </div>

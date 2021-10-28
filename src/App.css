@@ -2,7 +2,42 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-size: 12px;
+}
+
+html {
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 1399px) {
+  .filter-button, .addBtn, .dltBtn {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .filter-button, .addBtn, .dltBtn {
+    font-size: 0.7rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 575px) {
+  .section {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .item {
+    margin-bottom: 10px;
+  }
 }
 
 
@@ -20,34 +55,31 @@ body{
 
 .addBtn{
   background-color: #F5BB00;
-  font-size: 1vw;
+  /* font-size: 1vw; */
 }
 
-.dltBtn{
-  font-size: 1vw
-}
+
 
 .buttons{
   width: 50%;
 }
-.buttons button{
-  width: 7rem;
-  /* background-color: #F5BB00; */
-}
+
 
 .wrap-content{
   word-wrap: break-word;
+  
 }
+
+
+.filter-button{
+  background-color: #5F634F;
+}
+
 
 
 /* material UI dialog box css setting override */
 .MuiDialog-paper{
   height: 77%;
   padding: 1rem;
-}
-
-.filter-button{
-  background-color: #5F634F;
-  font-size: 1vw;
 }
 

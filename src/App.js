@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <div className='container'>
-      <div className='row w-75 mx-auto'>
+      <div className='row mx-auto'>
         <div className='col background'>
         <Dashboard/>
         </div>

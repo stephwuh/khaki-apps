@@ -104,34 +104,34 @@ const JobAppDetail = (props) => {
   return (
     <div className="container">
       <form>
-        <div className="row mb-3">
-          <div className="col-4">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Company</h5>
+        <div className="row d-block d-sm-flex section">
+          <div className="col col-sm-4 item">
+            <h5 className='text-nowrap'>Company</h5>
             <input
               data-testid="company"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={companyState}
               disabled={!editState}
               onChange={handleCompanyOnChange}
             />
           </div>
-          <div className="col-4">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Job Title</h5>
+          <div className="col col-sm-4 item">
+            <h5 className='text-nowrap'>Job Title</h5>
             <input
               data-testid="jobTitle"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={jobTitleState}
               disabled={!editState}
               onChange={handleJobTitleOnChange}
             />
           </div>
-          <div className="col-4">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Expected Salary</h5>
+          <div className="col col-sm-4 item">
+            <h5 className='text-nowrap'>Expected Salary</h5>
             <input
               data-testid="salary"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={salaryState}
               disabled={!editState}
@@ -139,23 +139,23 @@ const JobAppDetail = (props) => {
             />
           </div>
         </div>
-        <div className="row my-3">
-          <div className="col-6">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Location</h5>
+        <div className="row d-block d-sm-flex section">
+          <div className="col col-sm-6 item">
+            <h5 className='text-nowrap'>Location</h5>
             <input
               data-testid="location"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={locationState}
               disabled={!editState}
               onChange={handleLocationOnChange}
             />
           </div>
-          <div className="col-6">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Source Webpage</h5>
+          <div className="col col-sm-6 item">
+            <h5 className='text-nowrap'>Source Webpage</h5>
             <input
               data-testid="webpage"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={webpageState}
               disabled={!editState}
@@ -163,34 +163,34 @@ const JobAppDetail = (props) => {
             />
           </div>
         </div>
-        <div className="row my-3">
-          <div className="col-4">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Contact Name</h5>
+        <div className="row d-block d-sm-flex section">
+          <div className="col col-sm-4 item">
+            <h5 className='text-nowrap'>Contact Name</h5>
             <input
               data-testid="contactName"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={contactNameState}
               disabled={!editState}
               onChange={handleContactNameOnChange}
             />
           </div>
-          <div className="col-4">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Contact Number</h5>
+          <div className="col col-sm-4 item">
+            <h5 className='text-nowrap'>Contact Number</h5>
             <input
               data-testid="contactNumber"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={contactNumberState}
               disabled={!editState}
               onChange={handleContactNumberOnChange}
             />
           </div>
-          <div className="col-4">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Application Status</h5>
+          <div className="col col-sm-4 item">
+            <h5 className='text-nowrap'>Application Status</h5>
             <input
               data-testid="status"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               type="text"
               value={statusState}
               disabled={!editState}
@@ -199,21 +199,21 @@ const JobAppDetail = (props) => {
           </div>
         </div>
         <div className="row row-cols-1 row-cols-md-2">
-          <div className="col">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Job Description</h5>
+          <div className="col item">
+            <h5 className='text-nowrap'>Job Description</h5>
             <textarea
               data-testid="description"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               value={descriptionState}
               disabled={!editState}
               onChange={handleDescriptionOnChange}
             />
           </div>
           <div className="col">
-            <h5 className='text-nowrap' style={{fontSize:"1.1vw"}}>Notes</h5>
+            <h5 className='text-nowrap'>Notes</h5>
             <textarea
               data-testid="notes"
-              className='text-nowrap' style={{fontSize:"1.1vw"}}
+              className='text-nowrap'
               value={notesState}
               disabled={!editState}
               onChange={handleNotesOnChange}
@@ -221,7 +221,7 @@ const JobAppDetail = (props) => {
           </div>
         </div>
         <div className="row gx-0">
-          <div className="col-1">
+          <div className="col-2">
             {props.jobDetailFormState === "update" && (
               <button
                 data-testid="deleteBtn"
@@ -234,11 +234,11 @@ const JobAppDetail = (props) => {
             )}
           </div>
           <div className="col">
-            <div className='row justify-content-end'>
-            <div className="col-1 px-0">
+            <div className='row justify-content-end h-100'>
+            <div className="col-2 px-0">
               <button
                 data-testid="editBtn"
-                className="btn border w-100   addBtn"
+                className="btn border w-100 h-100 addBtn"
                 onClick={() => {
                   setEditState(!editState);
                 }}
@@ -248,10 +248,10 @@ const JobAppDetail = (props) => {
               </button>
             </div>
 
-            <div className="col-1 px-0 mx-2">
+            <div className="col-2 px-0 mx-2">
               <button
                 data-testid="submitBtn"
-                className="btn border w-100 addBtn"
+                className="btn border w-100 h-100 addBtn"
                 onClick={handleAppSubmit}
                 type="submit"
                 disabled={!editState}
