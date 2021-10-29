@@ -1,47 +1,13 @@
 {
   "job-app": [
     {
-      "company": "Toptal",
-      "jobTitle": "React Developer",
-      "location": "Manassas, VA",
-      "salary": "$70,000",
+      "company": "babylon",
+      "jobTitle": "front end software engineer",
+      "location": "Austin, TX",
       "status": "Application Submitted",
-      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2776830907&f_WT=2&geoId=103644278",
-      "description": "Requirements\n3+ years of experience in software development\nStrong proficiency in JavaScript, including DOM manipulation and the JavaScript object model\nThorough understanding of React.js and its core principles\nExperience with popular React.js workflows (such as Flux or Redux)\nFamiliarity with newer specifications of EcmaScript\nExperience with data structure libraries (e.g., Immutable.js)\nKnowledge of isomorphic React is a plus\nFamiliarity with RESTful APIs\nKnowledge of modern authorization mechanisms, such as JSON Web Token\nFamiliarity with modern front-end build pipelines and tools\nExperience with common front-end development tools such as Babel, Webpack, NPM, etc.\nAbility to understand business requirements and translate them into technical requirements\nA knack for benchmarking and optimization\nExperience with system architecture or leading a software team is a strong advantage\nFull-time availability is a strong advantage",
-      "notes": "Requirements\n3+ years of experience in software development\nStrong proficiency in JavaScript, including DOM manipulation and the JavaScript object model\nThorough understanding of React.js and its core principles\nExperience with popular React.js workflows (such as Flux or Redux)\nFamiliarity with newer specifications of EcmaScript\nExperience with data structure libraries (e.g., Immutable.js)\nKnowledge of isomorphic React is a plus\nFamiliarity with RESTful APIs\nKnowledge of modern authorization mechanisms, such as JSON Web Token\nFamiliarity with modern front-end build pipelines and tools\nExperience with common front-end development tools such as Babel, Webpack, NPM, etc.\nAbility to understand business requirements and translate them into technical requirements\nA knack for benchmarking and optimization\nExperience with system architecture or leading a software team is a strong advantage\nFull-time availability is a strong advantage",
+      "webpage": "https://jobs.lever.co/babylonhealth/d6a4e5ea-f513-424d-bd9c-7eebe1f0da7c?lever-source=LinkedInJobs",
+      "description": "The role\n\nBabylon is a healthtech company that is going to disrupt the healthcare industry by creating an AI / Digital first platform to re-invent how healthcare is delivered for the better.  \n\nIn your role as a Front End Engineer, you will have an opportunity to develop seamless applications to drive rich experiences for our end users at scale.  We are developing React (web based applications) and React Native (mobile applications).   \n\n\nTech Stack \n\nReact, React Native, Redux, GraphQL\nCOOL PROJECTS WE ARE WORKING ON\nClinical portal - Babylon provides the most efficient and high-quality interfaces for our clinicians to use when they are consulting, preparing and following-up with a patient. A fluid, fast UI is key to patient quality and efficiency. We’ve built a highly-composable component-based system in React and are continually enhancing useability and performance.\nReact Native platform - we’re moving to the React Native platform for developing apps and are blazing a trail for modern React Native development with our platform providing micro frontend, design and release capabilities. Our React Native experiences are packaged into multiple apps around the globe, we use rich data and behavioural insights to drive better access to healthcare through our mobile apps.\nWeb platform - we’re changing the way that web is thought about at Babylon through a new platform that provides our teams support for micro frontends, design systems, analytics, test and release out-of-the-box\nBehavioral data loops - our business depends on rich streams of data to optimize for patient experience and healthcare outcomes. We empower product teams by providing behavioural data loops as a service.\nWearables and labs sync - our mobile apps connect to patient wearables and lab results to let patients take control of their own healthcare, and understand what the next best thing they can do to improve their health is.\nREQUIREMENTS\nYou’re a keen front-end engineer with a great knowledge of modern Javascript and / or Typescript\nYou know React (or another modern framework) and are keen to learn and use React and React Native\nYou’re passionate about the web, Android and iOS surfaces\nYou have or want to build a great knowledge of GraphQL, Apollo Client & Services and Apollo Federation\nYou love to test and know tools like Jest, Detox, Appium and Cypress for testing\nYou’re interested in full-stack modern & secure cloud development and are comfortable diving into back-end code to find a bug or assist another engineer\nTechnology is your strength but you’ll bring more than just your technical expertise to the table - you’re obsessed with our users and helping them achieve better health outcomes - and you care deeply about every step of their healthcare journey",
       "id": 1
-    },
-    {
-      "company": "Coinbase Global Inc ",
-      "jobTitle": "Software Engineer",
-      "location": "San Francisco, CA",
-      "salary": "$29~$37/hr",
-      "status": "1st  Round Interview",
-      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2777182340&f_WT=2&geoId=103644278",
-      "contactName": "Bob Metivier",
-      "id": 2
-    },
-    {
-      "company": "Splunk",
-      "jobTitle": "Front End Developer",
-      "location": "Remote",
-      "salary": "$95,000",
-      "status": "Final Interview",
-      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2753275955&f_WT=2&geoId=103644278&keywords=entry%20level%20web%20developer&location=United%20States",
-      "description": "Responsibilities\n\nAct as the front end development lead, independently work close with members of the demo environment team to deliver a streamlined user experience\nWrite cutting-edge frontend code using JS/HTML/CSS within client-side MVC frameworks\nWork with demonstration program manager to offer guidance and technical feasibility of internal customer requests\n\nRequirements\n\nExperience with JavaScript and ReactJS\nExperience working and scripting within multiple operating systems, particularly Linux and Windows\nExperience with cyber security\nExcellent problem-solving skills with great attention to detail\nPreferred\nExperience developing software for enterprise\nExperience with systems interoperability, integration and networking\nKnowledge of data structures, storage systems, cloud infrastructure, front-end frameworks, and other technical tools\n\nEducation\n\nBachelor of Science degree in Computer Science or related discipline or equivalent work experience,",
-      "id": 3
-    },
-    {
-      "company": "HubSync",
-      "jobTitle": "Full Stack Engineer",
-      "location": "Alexandria, VA",
-      "salary": "$100,000",
-      "status": "2nd Round Interview",
-      "webpage": "https://www.linkedin.com/jobs/search/?currentJobId=2776007927&f_WT=2&geoId=103644278&keywords=entry%20level%20web%20developer&location=United%20States",
-      "contactName": "Paul Madarasz",
-      "description": "Responsibilities \n\nWork with development teams and product managers to conceptualize software solutions \nDesign and implement appealing user interfaces \nDesign and implement REST and WebSocket APIs \nDesign and manage databases \nWrite automated tests and perform manual testing \nTroubleshoot and debug issues \nWrite technical documentation \n \n\nSkills and Qualifications  \n\n5+ years experience developing web applications using React \n5+ years experience designing and developing REST APIs using Node.js and Express.js \nExperience with data modeling and both SQL and NoSQL database systems \nExperience working with Git and GitHub \nOutstanding communication skills \nDegree in Computer Science or equivalent work experience \nDocker \nAWS \nOpenID Connect \nBash \nCompetencies & KSA \n\nExcellent Communications Proficiency \nDeep functional experience in solution development engagements \nGreat team player thinking with the ability to work in small, high functioning teams ",
-      "notes": "Very close to where I live in Herndon VA.",
-      "id": 4
     }
   ]
 }

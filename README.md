@@ -6,7 +6,7 @@ This frontend only React web application allows users to track their job applica
 I worked on this seemingly simple project to practice test driven development and unit testing with Jest 
 and RTL (React Testing Library), as well as practice using Bootstrap to easily apply styling and mobile responsiveness.
 
-Regarding test driven development, I made sure to ahere to the following process: 
+Regarding test driven development, I made sure to adhere to the following process: 
 (1) write failing unit tests of test cases based on software requirements
 using the arrange-act-assert pattern, (2) write production code to make the unit test pass, (3) refactor to eliminate duplicate code, etc. (4) repeat steps 1~3.
 
