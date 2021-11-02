@@ -16,9 +16,10 @@ out noise that might affect the outcome of the test, I isolate each test so they
 not dependent on each other and control for external dependencies using mock data and 
 functions. 
 
-
-
-
+<span>
+  <img src="https://user-images.githubusercontent.com/56822167/139295289-a4f8fc92-cb66-4599-a134-15f450b12cff.PNG" width="350"/>
+  <img src="https://user-images.githubusercontent.com/56822167/139340499-52dc8eac-8c21-42f9-9dcb-db5e7a44f77f.PNG" width="350"/>
+</span>
 
 
 ## Features
@@ -35,8 +36,36 @@ functions.
 
 **Server:** Json Server
 
-<span>
-  <img src="https://user-images.githubusercontent.com/56822167/139295289-a4f8fc92-cb66-4599-a134-15f450b12cff.PNG" width="350"/>
-  <img src="https://user-images.githubusercontent.com/56822167/139340499-52dc8eac-8c21-42f9-9dcb-db5e7a44f77f.PNG" width="350"/>
-</span>
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/stephwuh/khaki-apps.git
+```
+
+Go to the project directory
+
+```bash
+  cd khaki-apps
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run server
+```
+
+Start React Script
+
+```bash
+  npm start
+```
 
