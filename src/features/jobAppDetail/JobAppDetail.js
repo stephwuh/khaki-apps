@@ -81,7 +81,7 @@ const JobAppDetail = (props) => {
     // e.preventDefault()
 
     if(!companyState && !jobTitleState && !locationState && !salaryState && !statusState && !webpageState && !contactNameState && !contactNumberState && !descriptionState && !notesState){
-      alert('Must input something to add job application');
+      alert('Must input something to add/update job application');
       return
     }
 
