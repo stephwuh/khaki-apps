@@ -80,6 +80,11 @@ const JobAppDetail = (props) => {
   const handleAppSubmit = async (e) => {
     // e.preventDefault()
 
+    if(!companyState && !jobTitleState && !locationState && !salaryState && !statusState && !webpageState && !contactNameState && !contactNumberState && !descriptionState && !notesState){
+      alert('Must input something to add job application');
+      return
+    }
+
     let response =
       props.jobDetailFormState === "add"
         ? await apiClient.addJobApp({
