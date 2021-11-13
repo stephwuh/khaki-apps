@@ -1,10 +1,19 @@
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 3200; 
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const ctrl = require('./controller.js')
 
-server.use(middlewares);
-server.use(router);
+app.use(cors());
+app.use(express.json());
 
-server.listen(port);
+app.get('/api/getApps', ctrl.getApps);
+app.put('/api/updateJobApp/:id', ctrl.updateJobApp);
+app.post('/api/addJobApp/', ctrl.addJobApp);
+app.delete('/api/deleteJobApp/:id', ctrl.deleteJobApp);
+
+
+const port = process.env.PORT || 3001;
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
+  });

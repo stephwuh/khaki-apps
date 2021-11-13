@@ -75,8 +75,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const companyA = a.company;
-      const companyB = b.company;
+      const companyA = a.company.toLowerCase();
+      const companyB = b.company.toLowerCase();
 
       let comparison = 0;
 
@@ -96,8 +96,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const jobTitleA = a.jobTitle;
-      const jobTitleB = b.jobTitle;
+      const jobTitleA = a.jobTitle.toLowerCase();
+      const jobTitleB = b.jobTitle.toLowerCase();
 
       let comparison = 0;
 
@@ -117,8 +117,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const locationA = a.location;
-      const locationB = b.location;
+      const locationA = a.location.toLowerCase();
+      const locationB = b.location.toLowerCase();
 
       let comparison = 0;
 
@@ -138,8 +138,8 @@ const Dashboard = () => {
     let jobApps = [...jobAppState];
 
     jobApps.sort((a, b) => {
-      const statusA = a.status;
-      const statusB = b.status;
+      const statusA = a.status.toLowerCase();
+      const statusB = b.status.toLowerCase();
 
       let comparison = 0;
 
