@@ -36,7 +36,7 @@ functions.
 
 **Client:** React, Matirial UI, Bootstrap, Jest, and React Testing Library
 
-**Server:** Json Server
+**Server:** Express
 
 
 ## Run Locally
